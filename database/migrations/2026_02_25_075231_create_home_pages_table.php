@@ -20,8 +20,9 @@ return new class extends Migration
             $table->json('hero_description')->nullable();
             $table->json('hero_button_text')->nullable();
             $table->string('hero_button_link')->nullable();
-            $table->string('hero_mobile_bg_image')->nullable();
             $table->string('hero_desktop_bg_image')->nullable();
+            $table->boolean('hero_use_mobile_image')->default(false);
+            $table->string('hero_mobile_bg_image')->nullable();
 
             // Highlight
             $table->json('highlight_subheading')->nullable();

@@ -119,7 +119,8 @@ class NewsPostResource extends Resource
                                 ->columnSpanFull(),
                             static::imageUpload('featured_image_mobile', 'Featured Image (Mobile)', 'news/mobile')
                                 ->columnSpanFull()
-                                ->visible(fn (Forms\Get $get) => $get('use_mobile_image')),
+                                ->visible(fn (Forms\Get $get) => $get('use_mobile_image'))
+                                ->required(fn (Forms\Get $get) => $get('use_mobile_image')),
                         ]),
 
                     // ── Tab 3: SEO ────────────────────────────────────────

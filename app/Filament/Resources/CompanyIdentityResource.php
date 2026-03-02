@@ -123,9 +123,11 @@ class CompanyIdentityResource extends Resource
                                         Forms\Components\TextInput::make('google_maps_link')
                                             ->label('Google Maps Link')
                                             ->maxLength(2048)
+                                            ->required()
                                             ->placeholder('https://maps.google.com/...'),
                                         Forms\Components\Textarea::make('map_embed_url')
                                             ->label('Map Embed URL (iframe src)')
+                                            ->required()
                                             ->rows(2),
                                     ]),
                                 ]),

@@ -29,7 +29,7 @@ class EditOnboardingPost extends EditRecord
             Actions\DeleteAction::make()
                 ->after(function () {
                     PostCacheService::invalidateAllForPost('onboarding', $this->record);
-                    $isRevalidated = FrontendCacheService::revalidate('onboardings');
+                    $isRevalidated = FrontendCacheService::revalidate('onboarding');
 
                     if ($isRevalidated) {
                         Notification::make()
@@ -58,7 +58,7 @@ class EditOnboardingPost extends EditRecord
     {
         PostCacheService::invalidateAllForPost('onboarding', $this->record, $this->oldSlugEn, $this->oldSlugId);
 
-        $isRevalidated = FrontendCacheService::revalidate('onboardings');
+        $isRevalidated = FrontendCacheService::revalidate('onboarding');
 
         if ($isRevalidated) {
             Notification::make()

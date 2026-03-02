@@ -86,11 +86,22 @@ class HomePageResource extends Resource
                                     ->maxLength(255),
                             ]),
                             Forms\Components\Section::make('Background Images')
-                                ->description('Images will be automatically converted to .webp on upload.')
+                                ->description('Desktop background is required. Mobile background can be customized with a toggle.')
                                 ->columns(2)
                                 ->schema([
-                                    static::imageUpload('hero_mobile_bg_image',  'Mobile Background',  'home/hero'),
-                                    static::imageUpload('hero_desktop_bg_image', 'Desktop Background', 'home/hero'),
+                                    static::imageUpload('hero_desktop_bg_image', 'Desktop Background', 'home/hero')
+                                        ->columnSpanFull()
+                                        ->required(),
+
+                                    Forms\Components\Toggle::make('hero_use_mobile_image')
+                                        ->label('Use Custom Mobile Background')
+                                        ->live()
+                                        ->columnSpanFull(),
+
+                                    static::imageUpload('hero_mobile_bg_image', 'Mobile Background', 'home/hero')
+                                        ->columnSpanFull()
+                                        ->visible(fn (Forms\Get $get) => $get('hero_use_mobile_image'))
+                                        ->required(fn (Forms\Get $get) => $get('hero_use_mobile_image')),
                                 ]),
                         ]),
 
@@ -123,7 +134,9 @@ class HomePageResource extends Resource
                                     ->required()
                                     ->maxLength(255),
                             ]),
-                            static::imageUpload('highlight_image', 'Highlight Image', 'home/highlight'),
+                            static::imageUpload('highlight_image', 'Highlight Image', 'home/highlight')
+                                ->columnSpanFull()
+                                ->required(),
                         ]),
 
                     // ── Tab 3: Statistics ───────────────────────────────────
@@ -183,8 +196,8 @@ class HomePageResource extends Resource
                                 ->defaultItems(0)
                                 ->columnSpanFull()
                                 ->schema([
-                                    static::imageUpload('image', 'Card Image', 'home/services/cruise')
-                                        ->columnSpanFull(),
+                                    /* static::imageUpload('image', 'Card Image', 'home/services/cruise')
+                                        ->columnSpanFull(), */
                                     Forms\Components\TextInput::make('heading')
                                         ->label('Heading')
                                         ->required()
@@ -230,8 +243,8 @@ class HomePageResource extends Resource
                                 ->defaultItems(0)
                                 ->columnSpanFull()
                                 ->schema([
-                                    static::imageUpload('image', 'Card Image', 'home/services/land')
-                                        ->columnSpanFull(),
+                                    /* static::imageUpload('image', 'Card Image', 'home/services/land')
+                                        ->columnSpanFull(), */
                                     Forms\Components\TextInput::make('heading')
                                         ->label('Heading')
                                         ->required()
@@ -302,13 +315,12 @@ class HomePageResource extends Resource
                                 ->columnSpanFull(),
                             Forms\Components\TextInput::make('seo_keywords')
                                 ->label('Meta Keywords')
-                                ->required()
                                 ->helperText('Comma-separated, e.g. cruise jobs, hospitality, Indonesia')
                                 ->maxLength(500)
                                 ->columnSpanFull(),
-                            static::imageUpload('seo_og_image', 'OG Image (Open Graph)', 'home/seo')
+                            /* static::imageUpload('seo_og_image', 'OG Image (Open Graph)', 'home/seo')
                                 ->helperText('Recommended size: 1200×630 px. Converted to .webp on upload.')
-                                ->columnSpanFull(),
+                                ->columnSpanFull(), */
                         ]),
 
                 ]),

@@ -33,7 +33,7 @@ class BoardMemberResource extends Resource
             ->imageEditor()
             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/bmp', 'image/tiff'])
             ->maxSize(3072)
-            ->nullable()
+            ->required()
             ->helperText('Recommended upload WebP images. Non-WebP images will be automatically converted to WebP. Maximum file size: 3MB.')
             ->saveUploadedFileUsing(
                 fn (TemporaryUploadedFile $file) => ImageService::storeAsWebp($file, $dir)

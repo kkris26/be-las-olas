@@ -22,15 +22,16 @@ class HomePageSeeder extends Seeder
 
             // ── Hero ───────────────────────────────────────────────────────
             'hero_subheading'       => ['id' => 'PT LAS OLAS INDONESIA', 'en' => 'PT LAS OLAS INDONESIA'],
-            'hero_heading'          => ['id' => 'Menghubungkan Talenta ke Penjuru Dunia', 'en' => 'Connecting Talents To The World'],
+            'hero_heading'          => ['id' => 'Connecting Talents To The World', 'en' => 'Connecting Talents To The World'],
             'hero_description'      => [
                 'id' => 'Agen Kapal Pesiar Resmi MSC Cruises & Explora Journeys, Menyediakan Peluang Kerja Profesional di Luar Negeri, dari Kapal Pesiar hingga Perhotelan Darat.',
                 'en' => 'Official Cruise Agency for MSC Cruises & Explora Journeys, Providing Professional International Career Opportunities, from Cruise Ships to Land-Based Hospitality.',
             ],
             'hero_button_text'      => ['id' => 'Daftar Sekarang!', 'en' => 'Register Now!'],
             'hero_button_link'      => '#register',
-            'hero_mobile_bg_image'  => $this->examplePath('example-potrait.png'),
             'hero_desktop_bg_image' => $this->examplePath('example-desktop.png'),
+            'hero_use_mobile_image' => false,
+            'hero_mobile_bg_image'  => $this->examplePath('example-potrait.png'),
 
             // ── Highlight ──────────────────────────────────────────────────
             'highlight_subheading'  => ['id' => 'PT Las Olas Indonesia',                              'en' => 'PT Las Olas Indonesia'],

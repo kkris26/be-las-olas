@@ -112,10 +112,12 @@ class FooterSettingResource extends Resource
                                 ->addActionLabel('Add Logo')
                                 ->collapsible()
                                 ->cloneable()
+                                ->required()
                                 ->defaultItems(0)
                                 ->columnSpanFull()
                                 ->schema([
                                     static::logoUpload('logo_image', 'Logo Image', 'footer/brands')
+                                    ->required()
                                         ->columnSpanFull(),
                                 ]),
                             Forms\Components\Textarea::make('footer_copyright_text')

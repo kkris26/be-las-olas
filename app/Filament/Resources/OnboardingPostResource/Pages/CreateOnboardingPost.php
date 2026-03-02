@@ -29,7 +29,7 @@ class CreateOnboardingPost extends CreateRecord
     {
         PostCacheService::invalidateAllForPost('onboarding', $this->record);
 
-        $isRevalidated = FrontendCacheService::revalidate('onboardings');
+        $isRevalidated = FrontendCacheService::revalidate('onboarding');
 
         if ($isRevalidated) {
             Notification::make()

@@ -99,7 +99,6 @@ class OnboardingSettingResource extends Resource
                                 ->columnSpanFull(),
                             Forms\Components\TextInput::make('seo_keywords')
                                 ->label('Meta Keywords')
-                                ->required()
                                 ->helperText('Comma-separated, e.g. onboarding, cruise career')
                                 ->maxLength(500)
                                 ->columnSpanFull(),

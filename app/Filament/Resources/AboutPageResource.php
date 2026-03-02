@@ -273,7 +273,6 @@ class AboutPageResource extends Resource
                                 ->columnSpanFull(),
                             Forms\Components\TextInput::make('seo_keywords')
                                 ->label('Meta Keywords')
-                                ->required()
                                 ->helperText('Comma-separated, e.g. about us, company profile')
                                 ->maxLength(500)
                                 ->columnSpanFull(),

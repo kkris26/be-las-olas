@@ -105,7 +105,8 @@ class OnboardingPostResource extends Resource
                                 ->columnSpanFull(),
                             static::imageUpload('featured_image_mobile', 'Featured Image (Mobile)', 'onboarding/mobile')
                                 ->columnSpanFull()
-                                ->visible(fn (Forms\Get $get) => $get('use_mobile_image')),
+                                ->visible(fn (Forms\Get $get) => $get('use_mobile_image'))
+                                ->required(fn (Forms\Get $get) => $get('use_mobile_image')),
                         ]),
 
                     Forms\Components\Tabs\Tab::make('SEO')
