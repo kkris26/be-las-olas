@@ -45,7 +45,7 @@ class CruiseServiceResource extends Resource
     {
         return $form
             ->schema([
-                static::imageUpload('image', 'Card Image', 'home/services/cruise')
+                static::imageUpload('image', 'Card Image', 'services/cruise')
                     ->columnSpanFull(),
 
                 Forms\Components\TextInput::make('heading')

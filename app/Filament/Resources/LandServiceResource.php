@@ -45,7 +45,7 @@ class LandServiceResource extends Resource
     {
         return $form
             ->schema([
-                static::imageUpload('image', 'Card Image', 'home/services/land')
+                static::imageUpload('image', 'Card Image', 'services/land')
                     ->columnSpanFull(),
 
                 Forms\Components\TextInput::make('heading')
