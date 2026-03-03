@@ -85,8 +85,7 @@ class CruiseServiceResource extends Resource
                 Tables\Columns\TextColumn::make('heading')
                     ->label('Heading')
                     ->searchable()
-                    ->sortable()
-                    ->getStateUsing(fn ($record) => $record->getTranslation('heading', 'id') ?? $record->getTranslation('heading', 'en') ?? 'N/A'),
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('sort_order')->label('#')->sortable(),
             ])
             ->actions([

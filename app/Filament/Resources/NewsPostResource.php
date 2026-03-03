@@ -159,8 +159,7 @@ class NewsPostResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->label('Title')
                     ->searchable()
-                    ->sortable()
-                    ->getStateUsing(fn ($record) => $record->getTranslation('title', 'id') ?? $record->getTranslation('title', 'en') ?? 'N/A'),
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('published_at')
                     ->label('Published At')
                     ->date('M d, Y')

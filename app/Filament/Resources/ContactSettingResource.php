@@ -21,7 +21,7 @@ class ContactSettingResource extends Resource
     protected static ?string $navigationIcon  = 'heroicon-o-phone';
     protected static ?string $navigationLabel = 'Contact Page';
     protected static ?string $navigationGroup = 'Page Settings';
-    protected static ?int    $navigationSort  = 4;
+    protected static ?int    $navigationSort  = 6;
 
     // ─── Reusable image-upload factory ───────────────────────────────────────
 

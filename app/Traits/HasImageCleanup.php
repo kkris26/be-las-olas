@@ -205,6 +205,12 @@ trait HasImageCleanup
             if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
                 return $this->extractPathsFromArray($decoded);
             }
+
+            // Fix: ignore HTML content or long text which are mistakenly treated as paths
+            if (str_contains($value, '<') || str_contains($value, '>') || strlen($value) > 500) {
+                return [];
+            }
+
             return [$value];
         }
 
@@ -224,9 +230,15 @@ trait HasImageCleanup
         foreach ($array as $item) {
             if (is_array($item)) {
                 $paths = array_merge($paths, $this->extractPathsFromArray($item));
-            } elseif (is_string($item) && 
-                      (str_contains($item, '/') || str_ends_with($item, '.webp') || str_ends_with($item, '.png'))) {
-                $paths[] = $item;
+            } elseif (is_string($item)) {
+                // Ignore strings that look like HTML or are too long to be paths
+                if (str_contains($item, '<') || str_contains($item, '>') || strlen($item) > 500 || str_contains($item, ' ')) {
+                    continue;
+                }
+                
+                if (str_contains($item, '/') || str_ends_with($item, '.webp') || str_ends_with($item, '.png')) {
+                    $paths[] = $item;
+                }
             }
         }
         return array_unique($paths);

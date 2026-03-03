@@ -41,8 +41,6 @@ class AboutPage extends Model
         'certified_heading',
         'certified_description',
 
-        'director_heading',
-        'director_description',
         'team_heading',
         'team_description',
 

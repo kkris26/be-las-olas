@@ -6,7 +6,12 @@ use App\Models\LandService;
 use Illuminate\Database\Seeder;
 
 class LandServiceSeeder extends Seeder
+
 {
+        private function parentPath(string $filename): string
+    {
+        return 'services/land/' . $filename;
+    }
 
     public function run(): void
     {
@@ -15,7 +20,7 @@ class LandServiceSeeder extends Seeder
 
         $services = [
             [
-                'image'       => null,
+                'image'       => $this->parentPath('turkey.webp'),
                 'heading'     => [
                     'id' => 'Turki',
                     'en' => 'Turkey',
@@ -32,7 +37,7 @@ class LandServiceSeeder extends Seeder
                 'sort_order'  => 1,
             ],
             [
-                'image'       => null,
+                'image'       => $this->parentPath('bulgaria.webp'),
                 'heading'     => [
                     'id' => 'Bulgaria',
                     'en' => 'Bulgaria',
@@ -49,7 +54,7 @@ class LandServiceSeeder extends Seeder
                 'sort_order'  => 2,
             ],
             [
-                'image'       => null,
+                'image'       => $this->parentPath('maldives.webp'),
                 'heading'     => [
                     'id' => 'Maldives',
                     'en' => 'Maldives',

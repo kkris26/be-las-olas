@@ -14,6 +14,7 @@ class ListNewsPosts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            \Filament\Actions\LocaleSwitcher::make(),
             \Filament\Actions\CreateAction::make(),
         ];
     }

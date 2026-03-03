@@ -7,7 +7,10 @@ use Illuminate\Database\Seeder;
 
 class CruiseServiceSeeder extends Seeder
 {
-
+        private function parentPath(string $filename): string
+    {
+        return 'services/cruise/' . $filename;
+    }
     public function run(): void
     {
         CruiseService::truncate();
@@ -15,7 +18,7 @@ class CruiseServiceSeeder extends Seeder
 
         $services = [
             [
-                'image'       => null,
+                'image'       => $this->parentPath('msc_cruises.webp'),
                 'heading'     => [
                     'id' => 'MSC Cruises',
                     'en' => 'MSC Cruises',
@@ -32,7 +35,7 @@ class CruiseServiceSeeder extends Seeder
                 'sort_order'  => 1,
             ],
             [
-                'image'       => null,
+                'image'       => $this->parentPath('explora_journeys.webp'),
                 'heading'     => [
                     'id' => 'Explora Journeys',
                     'en' => 'Explora Journeys',

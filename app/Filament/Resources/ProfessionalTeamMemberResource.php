@@ -86,9 +86,6 @@ class ProfessionalTeamMemberResource extends Resource
                 Tables\Columns\TextColumn::make('name')->label('Name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('role')
                     ->label('Role')
-                    ->getStateUsing(fn ($record) => $record->getTranslation('role', 'id')
-                        ?? $record->getTranslation('role', 'en')
-                        ?? 'N/A')
                     ->limit(60),
                 Tables\Columns\TextColumn::make('email')->label('Email')->searchable()->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('sort_order')->label('#')->sortable(),

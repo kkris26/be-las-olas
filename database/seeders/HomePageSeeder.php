@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class HomePageSeeder extends Seeder
 {
-    private function examplePath(string $filename): string
+    private function parentPath(string $filename): string
     {
         return 'home/' . $filename;
     }
@@ -29,9 +29,9 @@ class HomePageSeeder extends Seeder
             ],
             'hero_button_text'      => ['id' => 'Daftar Sekarang', 'en' => 'Register Now'],
             'hero_button_link'      => 'https://tms.lasolas.id/jobs',
-            'hero_desktop_bg_image' => $this->examplePath('hero/home_hero_image.webp'),
+            'hero_desktop_bg_image' => $this->parentPath('hero/home_hero_image.webp'),
             'hero_use_mobile_image' => true,
-            'hero_mobile_bg_image'  => $this->examplePath('hero/home_hero_image_potrait.webp'),
+            'hero_mobile_bg_image'  => $this->parentPath('hero/home_hero_image_potrait.webp'),
 
             // ── Highlight ──────────────────────────────────────────────────
             'highlight_subheading'  => ['id' => 'SELAMAT DATANG DI',                              'en' => 'WELCOME TO'],
@@ -41,7 +41,7 @@ class HomePageSeeder extends Seeder
                 'en' => 'As the official Cruise Agency for MSC Cruises and Explora Journeys, we help professional workers find the best career opportunities, both on cruise ships and in the land-based international hospitality sector. With years of experience in recruitment and a proven track record, we place candidates according to their competence, build mutually beneficial relationships between candidates and companies, and support the business growth of our partners and the future of our candidates.',
             ],
             'highlight_button_text' => ['id' => 'Tentang Kami', 'en' => 'About Us'],
-            'highlight_image'       => $this->examplePath('highlight/foto_gedung_LOI.webp'),
+            'highlight_image'       => $this->parentPath('highlight/foto_gedung_LOI.webp'),
 
             // ── Statistics ─────────────────────────────────────────────────
             'statistics_items' => [
@@ -96,7 +96,7 @@ class HomePageSeeder extends Seeder
                 'id' => 'las olas indonesia, lowongan kapal pesiar, agen resmi msc indonesia, kerja kapal pesiar, lowongan perhotelan luar negeri, agen p3mi resmi',
                 'en' => 'las olas indonesia, cruise ship recruitment, msc official agency indonesia, cruise jobs, international hospitality careers, licensed p3mi agency',
             ],
-            'seo_og_image' => $this->examplePath('seo/main-logo-loi.webp'),
+            'seo_og_image' => $this->parentPath('seo/main-logo-loi.webp'),
         ]);
     }
 }

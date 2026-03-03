@@ -21,7 +21,7 @@ class OnboardingSettingResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-star';
     protected static ?string $navigationLabel = 'Onboarding Page';
     protected static ?string $navigationGroup = 'Page Settings';
-    protected static ?int    $navigationSort  = 1;
+    protected static ?int    $navigationSort  = 5;
 
     // ─── Reusable image-upload factory ───────────────────────────────────────
 

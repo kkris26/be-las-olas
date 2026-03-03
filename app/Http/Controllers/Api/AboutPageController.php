@@ -71,9 +71,11 @@ class AboutPageController extends Controller
                     ])->values(),
                 ],
                 'collaboration' => [
-                    'heading'     => $page->collaboration_heading,
-                    'description' => $page->collaboration_description,
-                    'image'       => $url($page->collaboration_image),
+                    'heading'          => $page->collaboration_heading,
+                    'description'      => $page->collaboration_description,
+                    'image'            => $url($page->collaboration_image),
+                    'video_link'       => $page->collaboration_video_link,
+                    'video_target_url' => $page->collaboration_video_target_url,
                 ],
                 'certified' => [
                     'heading'     => $page->certified_heading,
@@ -83,9 +85,7 @@ class AboutPageController extends Controller
                         'logo_image' => $url($item['logo_image'] ?? null),
                     ])->values(),
                 ],
-                'directors_team' => [
-                    'director_heading'     => $page->director_heading,
-                    'director_description' => $page->director_description,
+                'team' => [
                     'team_heading'         => $page->team_heading,
                     'team_description'     => $page->team_description,
                 ],

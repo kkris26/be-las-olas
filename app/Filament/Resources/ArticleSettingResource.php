@@ -21,7 +21,7 @@ class ArticleSettingResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
     protected static ?string $navigationLabel = 'Articles Page';
     protected static ?string $navigationGroup = 'Page Settings';
-    protected static ?int    $navigationSort  = 2;
+    protected static ?int    $navigationSort  = 4;
 
     // ─── Reusable image-upload factory ───────────────────────────────────────
 

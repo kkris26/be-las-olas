@@ -29,7 +29,10 @@ return new class extends Migration
             $table->json('highlight_heading')->nullable();
             $table->json('highlight_description')->nullable();
             $table->json('highlight_button_text')->nullable();
+            $table->string('highlight_button_link')->nullable(); // Ensure this column is here if needed or keep existing logical order
             $table->string('highlight_image')->nullable();
+
+            // Statistics (Repeater)
 
             // Statistics (Repeater)
             $table->json('statistics_items')->nullable();

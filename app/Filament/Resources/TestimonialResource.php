@@ -90,17 +90,11 @@ class TestimonialResource extends Resource
 
                 Tables\Columns\TextColumn::make('position')
                     ->label('Position')
-                    ->getStateUsing(fn ($record) => $record->getTranslation('position', 'id')
-                        ?? $record->getTranslation('position', 'en')
-                        ?? 'N/A')
                     ->limit(50)
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('testimonial')
                     ->label('Preview')
-                    ->getStateUsing(fn ($record) => $record->getTranslation('testimonial', 'id')
-                        ?? $record->getTranslation('testimonial', 'en')
-                        ?? '')
                     ->limit(80),
 
                 Tables\Columns\TextColumn::make('updated_at')

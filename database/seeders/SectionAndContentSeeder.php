@@ -6,7 +6,6 @@ use App\Models\FocusSetting;
 use App\Models\PartnerSetting;
 use App\Models\TestimonialSetting;
 use App\Models\Testimonial;
-use App\Models\BoardMember;
 use App\Models\ProfessionalTeamMember;
 use Illuminate\Database\Seeder;
 
@@ -23,7 +22,6 @@ class SectionAndContentSeeder extends Seeder
         $this->seedPartnerSetting();
         $this->seedTestimonialSetting();
         $this->seedTestimonials();
-        $this->seedBoardMembers();
         $this->seedProfessionalTeam();
     }
 
@@ -121,7 +119,7 @@ class SectionAndContentSeeder extends Seeder
         $list = [
             [
                 'name' => 'Kadek Devita Apriliani', 'image' => null,
-                'position'    => ['id' => 'Terapis Pijat',    'en' => 'Massage Therapist'],
+                'position'    => ['id' => 'Massage Therapist',    'en' => 'Massage Therapist'],
                 'testimonial' => [
                     'id' => 'Saya berterima kasih kepada Lasolas karena telah membimbing saya melewati proses lamaran kerja di luar negeri dengan lancar.   ',
                     'en' => 'Joining PT Las Olas Indonesia was the best decision of my life. Their team is incredibly professional and supportive throughout the entire selection and departure process. I now work aboard an MSC cruise ship with earnings that far exceed my expectations.',
@@ -129,7 +127,7 @@ class SectionAndContentSeeder extends Seeder
             ],
             [
                 'name' => 'Siti Rahmawati', 'image' => null,
-                'position'    => ['id' => 'Tata Graha', 'en' => 'Housekeeping'],
+                'position'    => ['id' => 'Housekeeping', 'en' => 'Housekeeping'],
                 'testimonial' => [
                     'id' => 'Saya tidak menyangka bisa bekerja di kapal pesiar internasional. Las Olas membantu saya dari pelatihan bahasa Inggris, pengurusan visa, hingga orientasi pra-keberangkatan. Pengalaman bekerja di Explora Journeys membuka wawasan dan karir saya secara luar biasa.',
                     'en' => 'I never imagined I could work on an international cruise ship. Las Olas helped me with everything — from English training and visa processing to pre-departure orientation. Working at Explora Journeys has truly opened up my horizons and career in remarkable ways.',
@@ -137,7 +135,7 @@ class SectionAndContentSeeder extends Seeder
             ],
             [
                 'name' => 'Andi Pratama', 'image' => null,
-                'position'    => ['id' => 'Utilitas Dapur', 'en' => 'Galley Utility'],
+                'position'    => ['id' => 'Galley Utility', 'en' => 'Galley Utility'],
                 'testimonial' => [
                     'id' => 'Prosesnya transparan dan jelas dari awal. Las Olas tidak pernah meminta biaya tersembunyi dan selalu memberikan informasi yang akurat. Sekarang saya sudah kontrak kedua dan berencana naik jabatan. Terima kasih Las Olas!',
                     'en' => 'The process was clear and transparent from the start. Las Olas never had any hidden fees and always provided accurate information. I am now on my second contract and planning to get promoted. Thank you, Las Olas!',
@@ -151,26 +149,6 @@ class SectionAndContentSeeder extends Seeder
     }
 
     // ─────────────────────────────────────────────────────────────────────────
-    // BOARD MEMBERS
-    // ─────────────────────────────────────────────────────────────────────────
-
-    private function seedBoardMembers(): void
-    {
-        BoardMember::truncate();
-        $this->command?->info('Seeding Board Members…');
-
-        $members = [
-            ['name' => 'Agung Widnyana S.S M.M', 'role' => ['id' => 'Ketua dan Chief Executive',  'en' => 'Chairman and Chief Executive'], 'sort_order' => 1],
-            ['name' => 'Sarah Wijaya',            'role' => ['id' => 'Chief Operations Officer',  'en' => 'Chief Operations Officer'],      'sort_order' => 2],
-            ['name' => 'Budi Santoso',            'role' => ['id' => 'Chief Financial Officer',   'en' => 'Chief Financial Officer'],       'sort_order' => 3],
-        ];
-
-        foreach ($members as $data) {
-            BoardMember::create(array_merge($data, ['image' => null, 'linkedin' => null, 'email' => null]));
-        }
-    }
-
-    // ─────────────────────────────────────────────────────────────────────────
     // PROFESSIONAL TEAM
     // ─────────────────────────────────────────────────────────────────────────
 
@@ -180,14 +158,17 @@ class SectionAndContentSeeder extends Seeder
         $this->command?->info('Seeding Professional Team…');
 
         $members = [
-            ['name' => 'Dinda Pertiwi',  'role' => ['id' => 'Spesialis Rekrutmen Senior',  'en' => 'Senior Recruitment Specialist'], 'sort_order' => 1],
-            ['name' => 'Rian Hidayat',   'role' => ['id' => 'Manajer Pelatihan',            'en' => 'Training Manager'],              'sort_order' => 2],
-            ['name' => 'Putri Anindya',  'role' => ['id' => 'Eksekutif Pemasaran',          'en' => 'Marketing Executive'],           'sort_order' => 3],
-            ['name' => 'Kevin Pratama',  'role' => ['id' => 'Koordinator Operasional',      'en' => 'Operations Coordinator'],        'sort_order' => 4],
-            ['name' => 'Siti Rahmawati', 'role' => ['id' => 'Petugas Sumber Daya Manusia',  'en' => 'Human Resources Officer'],       'sort_order' => 5],
-            ['name' => 'Ahmad Fauzi',    'role' => ['id' => 'Spesialis Dukungan IT',        'en' => 'IT Support Specialist'],         'sort_order' => 6],
-            ['name' => 'Jessica Tan',    'role' => ['id' => 'Pengendali Dokumen',           'en' => 'Document Control'],              'sort_order' => 7],
-            ['name' => 'Hendra Wijaya',  'role' => ['id' => 'Pengembangan Bisnis',          'en' => 'Business Development'],          'sort_order' => 8],
+            ['name' => 'Agung Widnyana S.S M.M', 'role' => ['id' => 'Ketua dan Chief Executive',  'en' => 'Chairman and Chief Executive'], 'sort_order' => 1],
+            ['name' => 'Sarah Wijaya',            'role' => ['id' => 'Chief Operations Officer',  'en' => 'Chief Operations Officer'],      'sort_order' => 2],
+            ['name' => 'Budi Santoso',            'role' => ['id' => 'Chief Financial Officer',   'en' => 'Chief Financial Officer'],       'sort_order' => 3],
+            ['name' => 'Dinda Pertiwi',  'role' => ['id' => 'Spesialis Rekrutmen Senior',  'en' => 'Senior Recruitment Specialist'], 'sort_order' => 4],
+            ['name' => 'Rian Hidayat',   'role' => ['id' => 'Manajer Pelatihan',            'en' => 'Training Manager'],              'sort_order' => 5],
+            ['name' => 'Putri Anindya',  'role' => ['id' => 'Eksekutif Pemasaran',          'en' => 'Marketing Executive'],           'sort_order' => 6],
+            ['name' => 'Kevin Pratama',  'role' => ['id' => 'Koordinator Operasional',      'en' => 'Operations Coordinator'],        'sort_order' => 7],
+            ['name' => 'Siti Rahmawati', 'role' => ['id' => 'Petugas Sumber Daya Manusia',  'en' => 'Human Resources Officer'],       'sort_order' => 8],
+            ['name' => 'Ahmad Fauzi',    'role' => ['id' => 'Spesialis Dukungan IT',        'en' => 'IT Support Specialist'],         'sort_order' => 9],
+            ['name' => 'Jessica Tan',    'role' => ['id' => 'Pengendali Dokumen',           'en' => 'Document Control'],              'sort_order' => 10],
+            ['name' => 'Hendra Wijaya',  'role' => ['id' => 'Pengembangan Bisnis',          'en' => 'Business Development'],          'sort_order' => 11],
         ];
 
         foreach ($members as $data) {

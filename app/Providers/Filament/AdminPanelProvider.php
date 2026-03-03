@@ -59,7 +59,7 @@ class AdminPanelProvider extends PanelProvider
                 \App\Filament\Widgets\WelcomeBanner::class,
                 \App\Filament\Widgets\StatsOverview::class,
             ])
-            ->plugin(\Filament\SpatieLaravelTranslatablePlugin::make()->defaultLocales(['en', 'id']))
+            ->plugin(\Filament\SpatieLaravelTranslatablePlugin::make()->defaultLocales(['id', 'en']))
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

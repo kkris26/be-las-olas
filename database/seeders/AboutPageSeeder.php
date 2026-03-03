@@ -111,10 +111,14 @@ class AboutPageSeeder extends Seeder
                 'id' => 'In Collaboration with Campus of Dream',
             ],
             'collaboration_description' => [
-                'en' => 'Certified Quality Management System (QMS) ISO 9001:2015 by TUV Rheinland Germany and compliance with MLC 2006, certified by Lloyd’s Register (LR) Asia.',
-                'id' => 'Tersertifikasi Sistem Manajemen Mutu (SMM) ISO 9001:2015 oleh TUV Rheinland Germany dan memenuhi kepatuhan terhadap MLC 2006, yang disertifikasi oleh Lloyd’s Register (LR) Asia.',
+                'en' => 'We collaborate exclusively with Mediterranean Bali, a leading tourism vocational institution in Indonesia, which graduates thousands of alumni each year who have successfully built careers on cruise ships and in five-star hotels both internationally and domestically.',
+                'id' => 'Kami berkolaborasi eksklusif dengan Mediterranean Bali, lembaga vokasi pariwisata terkemuka di Indonesia, yang setiap tahun meluluskan ribuan alumni yang telah sukses berkarir di kapal pesiar dan hotel berbintang luar negeri maupun dalam negeri.
+
+'
             ],
-            'collaboration_image' => $this->parentPath('collaboration/collaboration-with-campus-of-dream.webp'),
+            'collaboration_image' => $this->parentPath('collaboration/mediterraneanbali.webp'),
+            'collaboration_video_link' => 'https://res.cloudinary.com/ddl6ef7ib/video/upload/v1772549599/VIDEO_MEDITERRANEAN_BALI_zyzim0.mp4',
+            'collaboration_video_target_url' => 'https://www.youtube.com/@MediBaliChannel/videos',
 
             // ── Certified ─────────────────────────────────────────────────
             'certified_heading' => [
@@ -122,8 +126,8 @@ class AboutPageSeeder extends Seeder
                 'id' => 'Kami Tersertifikasi',
             ],
             'certified_description' => [
-                'en' => 'We securely hold all necessary valid business permits from the constitutional executive authorities of central trade operations along with various state-approved recruitment regulation licenses, plus a series of essential absolute international qualification guarantee compliance certificates to navigate transparent activities, acting in full legal standing as a P3MI organizational institution registered within the territory of the Republic of Indonesia.',
-                'id' => 'Kami kokoh mencengkram segala jajaran lembar kertas surat perizinan wajib sah dari tangan pelaksana yurisdiksi konstitusi operasional perdagangan sentral beserta bermacam lisensi regulasi restu rekrutasi negara ditambah berderet sertifikat kepatuhan mutlak kualifikasi kelaiakan jaminan pakem internasional yang krusial guna menavigasikan jalannya aktivitas terlampau sangat tembus cahaya secara terang benderang bertindak dalam hakikat sah secara paripurna sebagai lembaga organisasi instansi P3MI tunggal tercatat riwayatnya beraksi bernaung dalam batas-batas teritorial NKRI merdeka ini.',
+                'en' => 'Certified Quality Management System (QMS) ISO 9001:2015 by TUV Rheinland Germany and meets compliance with MLC 2006, certified by Lloyd\'s Register (LR) Asia.',
+                'id' => 'Tersertifikasi Sistem Manajemen Mutu (SMM) ISO 9001:2015 oleh TUV Rheinland Germany dan memenuhi kepatuhan terhadap MLC 2006, yang disertifikasi oleh Lloyd\'s Register (LR) Asia.',
             ],
             'certified_logos' => [
                 ['logo_image' => $this->parentPath('certifications/lloyds-register.webp')],
@@ -132,21 +136,13 @@ class AboutPageSeeder extends Seeder
             ],
             'certified_image' => $this->parentPath('certified/TÜV-Rheinland-Building.webp'),
 
-            // ── Directors & Team ──────────────────────────────────────────
-            'director_heading' => [
-                'en' => 'The Esteemed Board of Directors',
-                'id' => 'Jajaran Direksi',
-            ],
-            'director_description' => [
-                'en' => 'The absolute brilliance driving our visionary leadership team securely anchors an impressive combined multi-decade footprint forged through raw execution within large-scale corporate talent recruitment mapping, specialized five-star maritime hospitality provisioning, and complex global cross-border trade business dynamics.',
-                'id' => 'Jajaran Direksi kami terdiri dari profesional berpengalaman dengan lebih dari 30 tahun di industri hotel bintang lima dan kapal pesiar, memiliki keahlian manajerial tingkat tinggi.',
-            ],
+            // ── Professional Team ─────────────────────────────────────────
             'team_heading' => [
-                'en' => 'Our Core Force of Dedicated Operational Professional Staff',
+                'en' => 'Professional Team',
                 'id' => 'Tim Profesional',
             ],
             'team_description' => [
-                'en' => 'Methodically structured firmly standing behind every single celebrated deployment flight success resides our passionately devoted elite battalion unit of seasoned operational professionals who systematically toil day and night effortlessly orchestrating exhaustive support networks to exclusively pamper our courageous candidates alongside respected corporate partner alliances.',
+                'en' => 'Our professional team consists of experts with years of experience in five-star hotels and cruise ships, prioritizing integrity, excellent service, and outstanding hospitality quality.',
                 'id' => 'Tim profesional kami terdiri dari para ahli berpengalaman di hotel bintang lima dan kapal pesiar, yang mengutamakan integritas, pelayanan terbaik, dan kualitas hospitality yang unggul.',
             ],
 

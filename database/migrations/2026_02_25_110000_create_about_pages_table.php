@@ -37,6 +37,8 @@ return new class extends Migration
             $table->json('collaboration_heading')->nullable();
             $table->json('collaboration_description')->nullable();
             $table->string('collaboration_image')->nullable();
+            $table->string('collaboration_video_link')->nullable();
+            $table->string('collaboration_video_target_url')->nullable();
 
             // Certified / Partners
             $table->json('certified_heading')->nullable();
@@ -44,9 +46,7 @@ return new class extends Migration
             $table->json('certified_logos')->nullable();   // Repeater (image-only, no translation)
             $table->string('certified_image')->nullable();
 
-            // Directors & Team
-            $table->json('director_heading')->nullable();
-            $table->json('director_description')->nullable();
+            // Team
             $table->json('team_heading')->nullable();
             $table->json('team_description')->nullable();
 

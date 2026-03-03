@@ -129,7 +129,7 @@ class HomePageResource extends Resource
                                     ->label('Button Text')
                                     ->required()
                                     ->maxLength(100)
-                                          ->columnSpanFull(),
+                                    ->columnSpanFull(),
 
                             static::imageUpload('highlight_image', 'Highlight Image', 'home/highlight')
                                 ->columnSpanFull()

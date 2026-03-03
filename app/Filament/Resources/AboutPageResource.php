@@ -87,14 +87,12 @@ class AboutPageResource extends Resource
                             Forms\Components\RichEditor::make('owner_message')
                                 ->label('Message (WYSIWYG)')
                                 ->required()
-                                ->fileAttachmentsDisk('public')
-                                ->fileAttachmentsDirectory('content/about')
                                 ->toolbarButtons([
                                     'bold', 'italic', 'underline', 'strike',
                                     'link', 'blockquote',
                                     'h2', 'h3', 'h4', 'h5', 'h6',
                                     'bulletList', 'orderedList',
-                                    'attachFiles', 'codeBlock',
+                                    'codeBlock',
                                     'undo', 'redo',
                                 ])
                                 ->columnSpanFull(),
@@ -114,14 +112,12 @@ class AboutPageResource extends Resource
                             Forms\Components\RichEditor::make('about_description')
                                 ->label('Company Description (WYSIWYG)')
                                 ->required()
-                                ->fileAttachmentsDisk('public')
-                                ->fileAttachmentsDirectory('content/about')
                                 ->toolbarButtons([
                                     'bold', 'italic', 'underline', 'strike',
                                     'link', 'blockquote',
                                     'h2', 'h3', 'h4', 'h5', 'h6',
                                     'bulletList', 'orderedList',
-                                    'attachFiles', 'codeBlock',
+                                    'codeBlock',
                                     'undo', 'redo',
                                 ])
                                 ->columnSpanFull(),
@@ -163,14 +159,12 @@ class AboutPageResource extends Resource
                                     Forms\Components\RichEditor::make('content')
                                         ->label('Content (WYSIWYG)')
                                         ->required()
-                                        ->fileAttachmentsDisk('public')
-                                        ->fileAttachmentsDirectory('content/about')
                                         ->toolbarButtons([
                                             'bold', 'italic', 'underline', 'strike',
                                             'link', 'blockquote',
                                             'h2', 'h3', 'h4', 'h5', 'h6',
                                             'bulletList', 'orderedList',
-                                            'attachFiles', 'codeBlock',
+                                            'codeBlock',
                                             'undo', 'redo',
                                         ])
                                         ->columnSpanFull(),
@@ -191,7 +185,21 @@ class AboutPageResource extends Resource
                                 ->required()
                                 ->rows(4)
                                 ->columnSpanFull(),
-                            static::imageUpload('collaboration_image', 'Collaboration Image', 'about-us/collaboration')
+                            Forms\Components\TextInput::make('collaboration_video_link')
+                                ->label('Video Source URL (mp4)')
+                                ->url()
+                                ->placeholder('https://...')
+                                ->helperText(new \Illuminate\Support\HtmlString(
+                                'Recommended: Upload the video to <a href="https://console.cloudinary.com/" target="_blank" style="text-decoration: underline;">Cloudinary</a>, then paste the video src here.'
+                                ))
+                                ->columnSpanFull(),
+                            Forms\Components\TextInput::make('collaboration_video_target_url')
+                                ->label('Video Click Destination URL')
+                                ->url()
+                                ->placeholder('https://...')
+                                ->helperText('Where the user goes when clicking the video.')
+                                ->columnSpanFull(),
+                            static::imageUpload('collaboration_image', 'Collaboration Image / Video Cover', 'about-us/collaboration')
                                 ->columnSpanFull(),
                         ]),
 
@@ -224,22 +232,10 @@ class AboutPageResource extends Resource
                                 ]),
                         ]),
 
-                    // ── Tab 7: Directors & Team ───────────────────────────
-                    Forms\Components\Tabs\Tab::make('Directors & Team')
+                    // ── Tab 7: Professional Team ───────────────────────────
+                    Forms\Components\Tabs\Tab::make('Professional Team')
                         ->icon('heroicon-o-users')
                         ->schema([
-                            Forms\Components\Section::make('Board of Directors')
-                                ->columns(2)
-                                ->schema([
-                                    Forms\Components\TextInput::make('director_heading')
-                                        ->label('Section Heading')
-                                        ->required()
-                                        ->maxLength(255),
-                                    Forms\Components\Textarea::make('director_description')
-                                        ->label('Description')
-                                        ->required()
-                                        ->rows(3),
-                                ]),
                             Forms\Components\Section::make('Professional Team')
                                 ->columns(2)
                                 ->schema([

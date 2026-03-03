@@ -21,7 +21,7 @@ class NewsSettingResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-megaphone';
     protected static ?string $navigationLabel = 'News Page';
     protected static ?string $navigationGroup = 'Page Settings';
-    protected static ?int    $navigationSort  = 3;
+    protected static ?int    $navigationSort  = 5;
 
     // ─── Reusable image-upload factory ───────────────────────────────────────
 

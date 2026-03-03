@@ -8,11 +8,14 @@ use Filament\Resources\Pages\ListRecords\Tab;
 
 class ListOnboardingPosts extends ListRecords
 {
+    use ListRecords\Concerns\Translatable;
+
     protected static string $resource = OnboardingPostResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
+            \Filament\Actions\LocaleSwitcher::make(),
             \Filament\Actions\CreateAction::make(),
         ];
     }

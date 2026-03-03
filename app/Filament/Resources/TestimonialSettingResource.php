@@ -38,7 +38,8 @@ class TestimonialSettingResource extends Resource
                 ->columnSpanFull(),
 
             Forms\Components\TextInput::make('testimonial_button_text')
-                ->label('Button Text (e.g. "Lihat Lainnya")')
+                ->label('Button Text')
+                ->helperText('The text for the button, e.g., "View More".')
                 ->required()
                 ->maxLength(100)
                 ->columnSpanFull(),
