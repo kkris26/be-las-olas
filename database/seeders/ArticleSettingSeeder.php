@@ -7,12 +7,17 @@ use Illuminate\Database\Seeder;
 
 class ArticleSettingSeeder extends Seeder
 {
+        private function parentPath(string $filename): string
+    {
+        return 'articles/' . $filename;
+    }
+
     public function run(): void
     {
         ArticleSetting::truncate();
 
         ArticleSetting::create([
-            'banner_image' => null,
+            'banner_image' => $this->parentPath('banner/articles-banner.webp'),
 
             'banner_title' => [
                 'en' => 'Latest Articles',
@@ -47,7 +52,7 @@ class ArticleSettingSeeder extends Seeder
                 'en' => 'articles, career tips, cruise industry, hospitality, overseas jobs, Las Olas Indonesia',
                 'id' => 'artikel, tips karier, industri kapal pesiar, perhotelan, kerja luar negeri, Las Olas Indonesia',
             ],
-            'seo_og_image' => null,
+            'seo_og_image' => $this->parentPath('seo/main-logo-loi.webp'),
         ]);
     }
 }

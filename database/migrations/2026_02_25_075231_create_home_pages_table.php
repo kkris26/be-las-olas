@@ -29,7 +29,6 @@ return new class extends Migration
             $table->json('highlight_heading')->nullable();
             $table->json('highlight_description')->nullable();
             $table->json('highlight_button_text')->nullable();
-            $table->string('highlight_button_link')->nullable();
             $table->string('highlight_image')->nullable();
 
             // Statistics (Repeater)
@@ -39,13 +38,11 @@ return new class extends Migration
             $table->json('cruise_subheading')->nullable();
             $table->json('cruise_heading')->nullable();
             $table->json('cruise_short_description')->nullable();
-            $table->json('cruise_services')->nullable(); // Repeater
 
             // Land Services
             $table->json('land_subheading')->nullable();
             $table->json('land_heading')->nullable();
             $table->json('land_short_description')->nullable();
-            $table->json('land_services')->nullable(); // Repeater
 
             // News Section
             $table->json('news_subheading')->nullable();

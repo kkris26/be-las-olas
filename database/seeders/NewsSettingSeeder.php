@@ -7,12 +7,17 @@ use Illuminate\Database\Seeder;
 
 class NewsSettingSeeder extends Seeder
 {
+        private function parentPath(string $filename): string
+    {
+        return 'news/' . $filename;
+    }
+
     public function run(): void
     {
         NewsSetting::truncate();
 
         NewsSetting::create([
-            'banner_image' => null,
+            'banner_image' => $this->parentPath('banner/news-bg.webp'),
 
             'banner_title' => [
                 'en' => 'Latest News',
@@ -30,7 +35,7 @@ class NewsSettingSeeder extends Seeder
             ],
 
             'short_description' => [
-                'en' => 'The latest updates on our activities, training programs, industrial cooperation, and the travel stories of our students and alumni.',
+                'en' => 'The latest updates on our activities, training programs, industrial cooperation, as well as the travel stories of our students and alumni.',
                 'id' => 'Update terbaru seputar kegiatan kami, program pelatihan, kerja sama industri, serta cerita perjalanan siswa dan alumni kami.',
             ],
 
@@ -47,7 +52,7 @@ class NewsSettingSeeder extends Seeder
                 'en' => 'news, activities, training programs, alumni, Las Olas Indonesia',
                 'id' => 'berita, kegiatan, program pelatihan, alumni, Las Olas Indonesia',
             ],
-            'seo_og_image' => null,
+            'seo_og_image' => $this->parentPath('seo/main-logo-loi.webp'),
         ]);
     }
 }

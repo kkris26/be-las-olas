@@ -41,9 +41,7 @@ class HomePageController extends Controller
 
         $url = fn (?string $path) => $path ? asset('storage/' . $path) : null;
 
-        $stats   = $page->getTranslation('statistics_items', $lang) ?? [];
-        $cruises = $page->getTranslation('cruise_services',  $lang) ?? [];
-        $lands   = $page->getTranslation('land_services',    $lang) ?? [];
+        $stats = $page->getTranslation('statistics_items', $lang) ?? [];
 
         $responseData = [
             'lang' => $lang,
@@ -55,6 +53,7 @@ class HomePageController extends Controller
                     'button_text'      => $page->hero_button_text,
                     'button_link'      => $page->hero_button_link,
                     'mobile_bg_image'  => $url($page->hero_mobile_bg_image),
+                    'use_mobile_image' => (bool) $page->hero_use_mobile_image,
                     'desktop_bg_image' => $url($page->hero_desktop_bg_image),
                 ],
                 'highlight' => [
@@ -78,29 +77,11 @@ class HomePageController extends Controller
                         'subheading'  => $page->cruise_subheading,
                         'heading'     => $page->cruise_heading,
                         'description' => $page->cruise_short_description,
-                        'items'       => collect($cruises)
-                            ->map(fn ($item) => [
-                                'image'       => $url($item['image'] ?? null),
-                                'heading'     => $item['heading']     ?? '',
-                                'description' => $item['description'] ?? '',
-                                'button_text' => $item['button_text'] ?? '',
-                                'button_link' => $item['button_link'] ?? null,
-                            ])
-                            ->values(),
                     ],
                     'land' => [
                         'subheading'  => $page->land_subheading,
                         'heading'     => $page->land_heading,
                         'description' => $page->land_short_description,
-                        'items'       => collect($lands)
-                            ->map(fn ($item) => [
-                                'image'       => $url($item['image'] ?? null),
-                                'heading'     => $item['heading']     ?? '',
-                                'description' => $item['description'] ?? '',
-                                'button_text' => $item['button_text'] ?? '',
-                                'button_link' => $item['button_link'] ?? null,
-                            ])
-                            ->values(),
                     ],
                 ],
                 'news' => [

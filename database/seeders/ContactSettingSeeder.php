@@ -7,12 +7,16 @@ use Illuminate\Database\Seeder;
 
 class ContactSettingSeeder extends Seeder
 {
+    private function parentPath(string $filename): string
+    {
+        return 'contact/' . $filename;
+    }
     public function run(): void
     {
         ContactSetting::truncate();
 
         ContactSetting::create([
-            'banner_image' => null,
+            'banner_image' => $this->parentPath('banner/contact.webp'),
 
             'banner_title' => [
                 'en' => 'Contact Us',
@@ -20,13 +24,13 @@ class ContactSettingSeeder extends Seeder
             ],
 
             'contact_heading' => [
-                'en' => 'Contact Us',
-                'id' => 'Hubungi Kami',
+                'en' => 'Get in Touch',
+                'id' => 'Get in Touch',
             ],
 
             'contact_description' => [
-                'en' => 'Contact us for registration information or collaboration. We are ready to assist with professional services and answer your questions.',
-                'id' => 'Hubungi kami untuk informasi pendaftaran atau kerjasama. Kami siap membantu dengan layanan profesional.',
+                'en' => 'Contact us for registration information or collaboration. We are ready to assist with professional services and answer any of your questions.',
+                'id' => 'Hubungi kami untuk informasi pendaftaran atau kerjasama. Kami siap membantu dengan layanan profesional dan menjawab setiap pertanyaan Anda.',
             ],
 
             // SEO
@@ -42,7 +46,7 @@ class ContactSettingSeeder extends Seeder
                 'en' => 'contact, inquiry, collaboration, registration, Las Olas Indonesia',
                 'id' => 'kontak, pertanyaan, kerjasama, pendaftaran, Las Olas Indonesia',
             ],
-            'seo_og_image' => null,
+            'seo_og_image' => $this->parentPath('seo/main-logo-loi.webp'),
         ]);
     }
 }

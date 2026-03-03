@@ -44,4 +44,8 @@ Route::middleware('throttle:api')->group(function () {
     // ── Team (separated) ──────────────────────────────────────────────────────────
     Route::get('/board-members',     [App\Http\Controllers\Api\BoardMemberController::class,       'index']);
     Route::get('/professional-team', [App\Http\Controllers\Api\ProfessionalTeamController::class,  'index']);
+
+    // ── Service Lists ─────────────────────────────────────────────────────────────
+    Route::get('/cruise-services', [App\Http\Controllers\Api\CruiseServiceController::class, 'index']);
+    Route::get('/land-services',   [App\Http\Controllers\Api\LandServiceController::class,   'index']);
 });

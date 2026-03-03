@@ -14,6 +14,7 @@ return new class extends Migration
             // General Info
             $table->string('company_name')->nullable();
             $table->json('tagline')->nullable();
+            $table->string('floating_whatsapp_link')->nullable();
 
             // Contact Details (repeater — per-locale for translatable label)
             $table->json('contact_items')->nullable();

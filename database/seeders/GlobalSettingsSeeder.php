@@ -8,6 +8,10 @@ use Illuminate\Database\Seeder;
 
 class GlobalSettingsSeeder extends Seeder
 {
+        private function footerBrandPath(string $filename): string
+    {
+        return 'footer/brands/' . $filename;
+    }
     public function run(): void
     {
         // ─── Company Identity ─────────────────────────────────────────────────
@@ -20,6 +24,8 @@ class GlobalSettingsSeeder extends Seeder
                 'en' => 'Professional Recruitment. Global Placement.',
                 'id' => 'Perekrutan Profesional. Penempatan Global.',
             ],
+            
+            'floating_whatsapp_link' => 'https://wa.me/6281999988900',
 
             // contact_items — stored per locale; non-translatable fields
             // (icon_key, value, link) are identical in both locales.
@@ -72,15 +78,15 @@ class GlobalSettingsSeeder extends Seeder
                         'title'           => 'Head Office',
                         'category'        => 'headOffice',
                         'address'         => '274 Hayam Wuruk Street, Denpasar, Bali - Indonesia 80239',
-                        'google_maps_link' => '',
-                        'map_embed_url'   => '',
+                        'google_maps_link' => 'https://maps.app.goo.gl/f7RW2EMeQQqXG9ZH8',
+                        'map_embed_url'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.236273999955!2d115.23827738366776!3d-8.669066169148937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2405fb087eefd%3A0xacbd8d9a47566a14!2sMediterranean%20Bali%20-%20Denpasar%20(Headquarters)!5e0!3m2!1sid!2sid!4v1772507865632!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
                     ],
                     [
                         'title'           => 'Operational Office',
                         'category'        => 'operational',
                         'address'         => '818 Tukad Badung Street, Renon, Denpasar, Bali - Indonesia 80226',
-                        'google_maps_link' => '',
-                        'map_embed_url'   => '',
+                        'google_maps_link' => 'https://maps.app.goo.gl/t325PB33dbUqcV6v9',
+                         'map_embed_url'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.9819083202246!2d115.23541537568805!3d-8.693267291355237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2418e6203fc35%3A0x2726eb57a9dd871!2sPT.%20Las%20Olas%20Indonesia!5e0!3m2!1sid!2sid!4v1772511977569!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
                     ],
                 ],
                 'id' => [
@@ -88,15 +94,15 @@ class GlobalSettingsSeeder extends Seeder
                         'title'           => 'Kantor Pusat',
                         'category'        => 'headOffice',
                         'address'         => 'Jalan Hayam Wuruk No. 274, Denpasar, Bali - Indonesia 80239',
-                        'google_maps_link' => '',
-                        'map_embed_url'   => '',
+                        'google_maps_link' => 'https://maps.app.goo.gl/f7RW2EMeQQqXG9ZH8',
+                        'map_embed_url'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.236273999955!2d115.23827738366776!3d-8.669066169148937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2405fb087eefd%3A0xacbd8d9a47566a14!2sMediterranean%20Bali%20-%20Denpasar%20(Headquarters)!5e0!3m2!1sid!2sid!4v1772507865632!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
                     ],
                     [
                         'title'           => 'Kantor Operasional',
                         'category'        => 'operational',
                         'address'         => 'Jl. Tukad Badung No. 818, Renon, Denpasar, Bali - Indonesia 80226',
-                        'google_maps_link' => '',
-                        'map_embed_url'   => '',
+                        'google_maps_link' => 'https://maps.app.goo.gl/t325PB33dbUqcV6v9',
+                        'map_embed_url'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.9819083202246!2d115.23541537568805!3d-8.693267291355237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2418e6203fc35%3A0x2726eb57a9dd871!2sPT.%20Las%20Olas%20Indonesia!5e0!3m2!1sid!2sid!4v1772511977569!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
                     ],
                 ],
             ],
@@ -130,16 +136,16 @@ class GlobalSettingsSeeder extends Seeder
             // footer_services — stored per locale (title is translatable)
             'footer_services' => [
                 'en' => [
-                    ['title' => 'Explora Journeys', 'url' => '/onboarding/explora-journeys'],
-                    ['title' => 'MSC Cruises',      'url' => '/onboarding/msc-cruises'],
-                    ['title' => 'Turkey',            'url' => '/onboarding/turkey'],
-                    ['title' => 'Bulgaria',          'url' => '/onboarding/bulgaria'],
+                    ['title' => 'Explora Journeys', 'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'MSC Cruises',      'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'Turkey',            'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'Bulgaria',          'url' => 'https://tms.lasolas.id/jobs'],
                 ],
                 'id' => [
-                    ['title' => 'Explora Journeys', 'url' => '/onboarding/explora-journeys'],
-                    ['title' => 'MSC Cruises',      'url' => '/onboarding/msc-cruises'],
-                    ['title' => 'Turki',             'url' => '/onboarding/turkey'],
-                    ['title' => 'Bulgaria',          'url' => '/onboarding/bulgaria'],
+                    ['title' => 'Explora Journeys', 'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'MSC Cruises',      'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'Turki',             'url' => 'https://tms.lasolas.id/jobs'],
+                    ['title' => 'Bulgaria',          'url' => 'https://tms.lasolas.id/jobs'],
                 ],
             ],
 
@@ -148,7 +154,10 @@ class GlobalSettingsSeeder extends Seeder
                 'id' => 'Agensi Perekrutan Resmi',
             ],
 
-            'footer_brand_logos' => [], // logos are uploaded via admin panel
+            'footer_brand_logos' => [
+                ['logo_image' => $this->footerBrandPath('explora_journey_white.webp')],
+                ['logo_image' => $this->footerBrandPath('msc_white.webp')],
+            ],
 
             'footer_copyright_text' => [
                 'en' => 'Copyright © :year PT. Las Olas Indonesia | All Rights Reserved.',

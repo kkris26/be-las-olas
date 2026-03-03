@@ -51,7 +51,5 @@ class HomePage extends Model
 
         // Repeater arrays — entire array stored per locale
         'statistics_items',
-        'cruise_services',
-        'land_services',
     ];
 }

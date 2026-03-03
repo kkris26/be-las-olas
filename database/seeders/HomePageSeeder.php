@@ -9,7 +9,7 @@ class HomePageSeeder extends Seeder
 {
     private function examplePath(string $filename): string
     {
-        return 'example/' . $filename;
+        return 'home/' . $filename;
     }
 
     public function run(): void
@@ -22,134 +22,63 @@ class HomePageSeeder extends Seeder
 
             // ── Hero ───────────────────────────────────────────────────────
             'hero_subheading'       => ['id' => 'PT LAS OLAS INDONESIA', 'en' => 'PT LAS OLAS INDONESIA'],
-            'hero_heading'          => ['id' => 'Connecting Talents To The World', 'en' => 'Connecting Talents To The World'],
+            'hero_heading'          => ['id' => 'Connecting Talents to the World', 'en' => 'Connecting Talents to the World'],
             'hero_description'      => [
-                'id' => 'Agen Kapal Pesiar Resmi MSC Cruises & Explora Journeys, Menyediakan Peluang Kerja Profesional di Luar Negeri, dari Kapal Pesiar hingga Perhotelan Darat.',
-                'en' => 'Official Cruise Agency for MSC Cruises & Explora Journeys, Providing Professional International Career Opportunities, from Cruise Ships to Land-Based Hospitality.',
+                'id' => 'Agen kapal pesiar resmi MSC Cruises & Explora Journeys, menyediakan peluang kerja profesional di luar negeri, dari kapal pesiar hingga perhotelan darat.',
+                'en' => 'Official Cruise Agency for MSC Cruises & Explora Journeys, providing professional international career opportunities, from cruise ships to land-based hospitality.',
             ],
-            'hero_button_text'      => ['id' => 'Daftar Sekarang!', 'en' => 'Register Now!'],
-            'hero_button_link'      => '#register',
-            'hero_desktop_bg_image' => $this->examplePath('example-desktop.png'),
-            'hero_use_mobile_image' => false,
-            'hero_mobile_bg_image'  => $this->examplePath('example-potrait.png'),
+            'hero_button_text'      => ['id' => 'Daftar Sekarang', 'en' => 'Register Now'],
+            'hero_button_link'      => 'https://tms.lasolas.id/jobs',
+            'hero_desktop_bg_image' => $this->examplePath('hero/home_hero_image.webp'),
+            'hero_use_mobile_image' => true,
+            'hero_mobile_bg_image'  => $this->examplePath('hero/home_hero_image_potrait.webp'),
 
             // ── Highlight ──────────────────────────────────────────────────
-            'highlight_subheading'  => ['id' => 'PT Las Olas Indonesia',                              'en' => 'PT Las Olas Indonesia'],
-            'highlight_heading'     => ['id' => 'Mitra Resmi MSC Cruises & Explora Journeys',         'en' => 'Official Partner of MSC Cruises & Explora Journeys'],
+            'highlight_subheading'  => ['id' => 'SELAMAT DATANG DI',                              'en' => 'WELCOME TO'],
+            'highlight_heading'     => ['id' => 'PT Las Olas Indonesia',         'en' => 'PT Las Olas Indonesia'],
             'highlight_description' => [
-                'id' => 'Sebagai P3MI berlisensi dan Agen Kru resmi, kami membantu tenaga profesional menemukan peluang karier terbaik di industri pelayaran mewah dan perhotelan internasional. Dengan pengalaman bertahun-tahun dalam perekrutan dan rekam jejak yang terbukti, kami menyeleksi kandidat berdasarkan kompetensi, membangun hubungan yang solid antara pelamar dan perusahaan, serta mendukung masa depan karir global tanpa batas.',
-                'en' => 'As a licensed P3MI and official Cruise Agency, we assist professional workers in finding the best career opportunities within the luxury cruise industry and international hospitality. With years of recruitment experience and a proven track record, we screen candidates based on competence, build solid relationships between applicants and companies, and support a boundless global career future.',
+                'id' => 'Sebagai agensi kapal pesiar resmi MSC Cruises dan Explora Journeys, kami membantu tenaga kerja profesional menemukan peluang karier terbaik, baik di kapal pesiar maupun sektor hospitality luar negeri berbasis darat. Dengan pengalaman bertahun-tahun dalam perekrutan dan rekam jejak yang terbukti, kami menempatkan kandidat sesuai kompetensi, membangun hubungan saling menguntungkan antara kandidat dan perusahaan, serta mendukung pertumbuhan bisnis mitra dan masa depan kandidat.',
+                'en' => 'As the official Cruise Agency for MSC Cruises and Explora Journeys, we help professional workers find the best career opportunities, both on cruise ships and in the land-based international hospitality sector. With years of experience in recruitment and a proven track record, we place candidates according to their competence, build mutually beneficial relationships between candidates and companies, and support the business growth of our partners and the future of our candidates.',
             ],
-            'highlight_button_text' => ['id' => 'Kenali Lebih Lanjut', 'en' => 'Learn More About Us'],
-            'highlight_button_link' => '#about',
-            'highlight_image'       => $this->examplePath('example-desktop.png'),
+            'highlight_button_text' => ['id' => 'Tentang Kami', 'en' => 'About Us'],
+            'highlight_image'       => $this->examplePath('highlight/foto_gedung_LOI.webp'),
 
             // ── Statistics ─────────────────────────────────────────────────
             'statistics_items' => [
                 'en' => [
-                    ['value' => 2017, 'heading' => 'Year Established',      'has_prefix' => false, 'prefix_text' => null],
-                    ['value' => 600,  'heading' => 'Cruises Placements',    'has_prefix' => true,  'prefix_text' => '+'],
-                    ['value' => 150,  'heading' => 'Land Placements',       'has_prefix' => true,  'prefix_text' => '+'],
-                    ['value' => 4,    'heading' => 'Global Partners',       'has_prefix' => false, 'prefix_text' => null],
+                    ['value' => 2017, 'heading' => 'Year of establishment',      'has_prefix' => false, 'prefix_text' => null],
+                    ['value' => 600,  'heading' => 'Total on board cruise',    'has_prefix' => true,  'prefix_text' => '+'],
+                    ['value' => 150,  'heading' => 'Total land based',       'has_prefix' => true,  'prefix_text' => '+'],
+                    ['value' => 5,    'heading' => 'Partners',       'has_prefix' => false, 'prefix_text' => null],
                 ],
                 'id' => [
-                    ['value' => 2017, 'heading' => 'Tahun Berdiri',         'has_prefix' => false, 'prefix_text' => null],
-                    ['value' => 600,  'heading' => 'Penempatan Pesiar',     'has_prefix' => true,  'prefix_text' => '+'],
-                    ['value' => 150,  'heading' => 'Penempatan Darat',      'has_prefix' => true,  'prefix_text' => '+'],
-                    ['value' => 4,    'heading' => 'Mitra Global',          'has_prefix' => false, 'prefix_text' => null],
+                    ['value' => 2017, 'heading' => 'Year of establishment',      'has_prefix' => false, 'prefix_text' => null],
+                    ['value' => 600,  'heading' => 'Total on board cruise',    'has_prefix' => true,  'prefix_text' => '+'],
+                    ['value' => 150,  'heading' => 'Total land based',       'has_prefix' => true,  'prefix_text' => '+'],
+                    ['value' => 5,    'heading' => 'Partners',       'has_prefix' => false, 'prefix_text' => null],
                 ],
             ],
 
             // ── Cruise Services ────────────────────────────────────────────
-            'cruise_subheading'        => ['id' => 'Karir Utama Kami',               'en' => 'Our Main Career'],
-            'cruise_heading'           => ['id' => 'Penempatan Kapal Pesiar Mewah', 'en' => 'Luxury Cruise Ship Placement'],
+            'cruise_subheading'        => ['id' => 'LAYANAN KAMI',               'en' => 'OUR SERVICES'],
+            'cruise_heading'           => ['id' => 'Penempatan di Kapal Pesiar', 'en' => 'Cruise Ship Placement'],
             'cruise_short_description' => [
-                'id' => 'Kami sangat berpengalaman dalam merekrut kandidat andal untuk bekerja di kapal pesiar internasional kelas satu dengan penghasilan mata uang asing.',
-                'en' => 'We are highly experienced in recruiting reliable candidates to work on first-class international cruise ships earning foreign currency.',
+                'id' => 'Kami berpengalaman dalam merekrut dan menempatkan tenaga kerja terbaik untuk bergabung dengan perusahaan kapal pesiar ternama Eropa-Amerika.',
+                'en' => 'We are experienced in recruiting and placing the best workers to join renowned European-American cruise ship companies.',
             ],
-            'cruise_services' => [
-                'en' => [
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'MSC Cruises',
-                        'description' => "MSC Cruises, one of the world's largest cruise lines, offers a luxury experience with superior service and incredible international destinations.",
-                        'button_text' => 'Apply to MSC',
-                        'button_link' => '#msc',
-                    ],
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Explora Journeys',
-                        'description' => 'A distinct ultra-luxury cruise brand presenting an exclusive journey with highly personalized service and amazing global boutique destinations.',
-                        'button_text' => 'Apply to Explora',
-                        'button_link' => '#explora',
-                    ],
-                ],
-                'id' => [
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'MSC Cruises',
-                        'description' => 'MSC Cruises, salah satu armada kapal pesiar terbesar di dunia, menawarkan pengalaman berlayar mewah dengan layanan unggul dan destinasi internasional memukau.',
-                        'button_text' => 'Lamar MSC',
-                        'button_link' => '#msc',
-                    ],
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Explora Journeys',
-                        'description' => 'Merk pelayaran ultra-mewah yang menghadirkan perjalanan eksklusif sekelas resor butik dengan layanan sangat personal dan destinasi global pesona tinggi.',
-                        'button_text' => 'Lamar Explora',
-                        'button_link' => '#explora',
-                    ],
-                ],
-            ],
-
             // ── Land Services ─────────────────────────────────────────────
-            'land_subheading'        => ['id' => 'Peluang Global Lainnya',                'en' => 'Other Global Opportunities'],
-            'land_heading'           => ['id' => 'Penempatan Industri Perhotelan Darat',   'en' => 'Land-Based Hospitality Placement'],
+            'land_subheading'        => ['id' => 'LAYANAN KAMI',                'en' => 'OUR SERVICES'],
+            'land_heading'           => ['id' => 'Penempatan di Industri Perhotelan Luar Negeri (Sektor Darat)',   'en' => 'Placement in International Hospitality Industry (Land Sector)'],
             'land_short_description' => [
-                'id' => 'Selain laut lepas, kami juga merekrut dan menempatkan tenaga kerja profesional perhotelan di berbagai sektor komersial darat tingkat Eropa.',
-                'en' => 'Beyond the open sea, we also recruit and place professional hospitality workers in various high-level European commercial land sectors.',
+                'id' => 'Kami merekrut dan menempatkan Pekerja Migran Indonesia di resort dan hotel berbintang di beberapa negara prospektif di Eropa seperti di Bulgaria dan Turki serta di kawasan pariwisata internasional seperti Maldives.',
+                'en' => 'We recruit and place Indonesian Migrant Workers in resorts and star hotels in several prospective countries in Europe such as Bulgaria and Turkey as well as in international tourism areas like the Maldives.',
             ],
-            'land_services' => [
-                'en' => [
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Turkey Placements',
-                        'description' => 'Turkey is an outstanding hub bridging Europe and Asia, with a fast-growing tourism economy and high demand for 5-star hospitality workers.',
-                        'button_text' => 'Discover Opportunities',
-                        'button_link' => '#turkey',
-                    ],
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Bulgaria Placements',
-                        'description' => 'Bulgaria offers strategic and promising job prospects with its booming hotel industry sector and great pathways to wider European Union careers.',
-                        'button_text' => 'Discover Opportunities',
-                        'button_link' => '#bulgaria',
-                    ],
-                ],
-                'id' => [
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Penempatan Turki',
-                        'description' => 'Turki adalah penghubung utama Eropa dan Asia yang luar biasa, dengan ekonomi pariwisata super cepat dan permintaan tinggi untuk pekerja perhotelan bintang 5.',
-                        'button_text' => 'Jelajahi Peluang',
-                        'button_link' => '#turkey',
-                    ],
-                    [
-                        'image'       => $this->examplePath('example-desktop.png'),
-                        'heading'     => 'Penempatan Bulgaria',
-                        'description' => 'Bulgaria menawarkan prospek kerja strategis dan menjanjikan dengan sektor perhotelannya yang sedang meroket serta jalur bagus menuju karir Uni Eropa.',
-                        'button_text' => 'Jelajahi Peluang',
-                        'button_link' => '#bulgaria',
-                    ],
-                ],
-            ],
-
             // ── News Section ──────────────────────────────────────────────
-            'news_subheading'        => ['id' => 'Pusat Informasi',               'en' => 'Information Center'],
+            'news_subheading'        => ['id' => 'PUSAT INFORMASI',               'en' => 'INFORMATION CENTER'],
             'news_heading'           => ['id' => 'Berita & Acara Terkini',         'en' => 'Latest News & Events'],
             'news_short_description' => [
                 'id' => 'Ikuti ulasan berita pembaruan terbaru seputar kegiatan perekrutan, program pelatihan, jalinan kerja sama industri baru, serta berbagai cerita inspiratif alumni kami.',
-                'en' => 'Follow our latest news updates on recruitment activities, training programs, new industry partnerships, and various inspiring success stories from our alumni.',
+                'en' => 'Follow our latest news updates regarding recruitment activities, training programs, new industry partnerships, and various inspiring stories from our alumni.',
             ],
             'news_button_text' => ['id' => 'Baca Semua Berita', 'en' => 'Read All News'],
             'news_button_link' => '#news',
@@ -167,7 +96,7 @@ class HomePageSeeder extends Seeder
                 'id' => 'las olas indonesia, lowongan kapal pesiar, agen resmi msc indonesia, kerja kapal pesiar, lowongan perhotelan luar negeri, agen p3mi resmi',
                 'en' => 'las olas indonesia, cruise ship recruitment, msc official agency indonesia, cruise jobs, international hospitality careers, licensed p3mi agency',
             ],
-            'seo_og_image' => $this->examplePath('example-desktop.png'),
+            'seo_og_image' => $this->examplePath('seo/main-logo-loi.webp'),
         ]);
     }
 }

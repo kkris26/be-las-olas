@@ -48,6 +48,10 @@ class DatabaseSeeder extends Seeder
 
         // ── Section Settings, Testimonials & Team Members ────────────────────
         $this->call(SectionAndContentSeeder::class);
+
+        // ── Service Lists ─────────────────────────────────────────────────────
+        $this->call(CruiseServiceSeeder::class);
+        $this->call(LandServiceSeeder::class);
     }
 }
 

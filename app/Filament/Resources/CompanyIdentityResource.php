@@ -45,6 +45,12 @@ class CompanyIdentityResource extends Resource
                                 ->required()
                                 ->maxLength(255)
                                 ->columnSpanFull(),
+                            Forms\Components\TextInput::make('floating_whatsapp_link')
+                                ->label('Floating WhatsApp Link')
+                                ->placeholder('https://wa.me/62812xxx')
+                                ->required()
+                                ->maxLength(500)
+                                ->columnSpanFull(),
                         ]),
 
                     // ── Tab 2: Contact Details ────────────────────────────

@@ -12,9 +12,9 @@ use Illuminate\Database\Seeder;
 
 class SectionAndContentSeeder extends Seeder
 {
-    private function examplePath(string $filename): string
+    private function parentPath(string $filename): string
     {
-        return 'example/' . $filename;
+        return 'sections/' . $filename;
     }
 
     public function run(): void
@@ -39,17 +39,17 @@ class SectionAndContentSeeder extends Seeder
         FocusSetting::create([
             'focus_heading' => ['id' => 'Fokus Kami', 'en' => 'Our Focus'],
             'focus_description' => [
-                'id' => 'Memastikan proses seleksi, pengembangan, dan penempatan tenaga kerja berjalan secara profesional, transparan, dan sesuai standar internasional untuk mendukung karir global Anda.',
-                'en' => 'Ensuring professional, transparent, and internationally-aligned selection, development, and placement processes to support your global career journey.',
+                'id' => 'Memastikan proses seleksi, pengembangan, dan penempatan tenaga kerja berjalan profesional dan terintegrasi.',
+                'en' => 'Ensuring the selection, development, and placement process of the workforce runs professionally and integratedly.',
             ],
             'focus_items' => [
                 'id' => [
-                    ['icon_key' => 'personSearch', 'title' => 'Perekrutan Tenaga Kerja',   'description' => 'Kami merekrut kandidat terbaik melalui seleksi ketat yang berorientasi pada standar industri kapal pesiar internasional.'],
-                    ['icon_key' => 'assignment',   'title' => 'Seleksi Awal',              'description' => 'Proses seleksi awal yang komprehensif untuk memastikan kesesuaian kompetensi kandidat dengan kebutuhan posisi.'],
-                    ['icon_key' => 'document',     'title' => 'Layanan Dokumen',           'description' => 'Bantuan lengkap pengurusan dokumen kerja, visa, dan persyaratan administratif lainnya secara profesional dan cepat.'],
-                    ['icon_key' => 'business',     'title' => 'Proses Penempatan',         'description' => 'Koordinasi menyeluruh dari awal kontrak hingga keberangkatan untuk memastikan penempatan yang mulus dan sukses.'],
-                    ['icon_key' => 'analytics',    'title' => 'Pengembangan Kompetensi',   'description' => 'Program pelatihan terstruktur untuk meningkatkan keterampilan teknis dan soft skill sesuai standar internasional.'],
-                    ['icon_key' => 'partnership',  'title' => 'Perluasan Jaringan',        'description' => 'Membangun dan memperluas jaringan kemitraan strategis dengan perusahaan kapal pesiar bertaraf dunia.'],
+                    ['icon_key' => 'personSearch', 'title' => 'Perekrutan Tenaga Kerja',   'description' => 'Kami berfokus dalam membuka akses karier dan peluang kerja di tingkat internasional.'],
+                    ['icon_key' => 'assignment',   'title' => 'Seleksi Awal dan Peniliaian Kompetensi Pekerja',              'description' => 'Kami selalu memastikan supaya setiap kandidat kompeten dan profesional.'],
+                    ['icon_key' => 'document',     'title' => 'Layanan Pengurusan Dokumen',           'description' => 'Kami memastikan seluruh dokumen diproses secara lengkap, akurat, dan tepat waktu, sesuai legalitas yang berlaku.'],
+                    ['icon_key' => 'business',     'title' => 'Proses Penempatan di Industri',         'description' => 'Kami memastikan proses penempatan di industri berjalan tepat dan profesional.'],
+                    ['icon_key' => 'analytics',    'title' => 'Pengembangan Kompetensi Pekerja',   'description' => 'Menjadi fokus kami dalam meningkatkan kompetensi kerja agar kinerja sesuai dengan harapan user.'],
+                    ['icon_key' => 'partnership',  'title' => 'Perluasan Jaringan Kemitraan Penempatan Kerja',        'description' => 'Kami melakukannya secara strategis untuk membuka lebih banyak peluang karier di berbagai industri.'],
                 ],
                 'en' => [
                     ['icon_key' => 'personSearch', 'title' => 'Workforce Recruitment',     'description' => 'We recruit top candidates through rigorous screening aligned with international cruise industry standards.'],
@@ -60,9 +60,9 @@ class SectionAndContentSeeder extends Seeder
                     ['icon_key' => 'partnership',  'title' => 'Network Expansion',         'description' => 'Building and expanding strategic partnerships with world-class cruise and hospitality companies.'],
                 ],
             ],
-            'focus_bg_desktop'    => $this->examplePath('example-desktop.png'),
+            'focus_bg_desktop'    => $this->parentPath('focus/background_image.webp'),
             'use_focus_bg_mobile' => true,
-            'focus_bg_mobile'     => $this->examplePath('example-potrait.png'),
+            'focus_bg_mobile'     => $this->parentPath('focus/background_image.webp'),
         ]);
     }
 
@@ -78,14 +78,14 @@ class SectionAndContentSeeder extends Seeder
         PartnerSetting::create([
             'partner_heading'     => ['id' => 'Mitra Kami', 'en' => 'Our Partners'],
             'partner_description' => [
-                'id' => 'Kami bangga bermitra dengan perusahaan-perusahaan kapal pesiar kelas dunia yang mempercayakan rekrutmen tenaga kerja terbaik Indonesia kepada kami.',
+                'id' => 'Kami menjalin kerjasama dengan mitra internasional terpercaya, memastikan standar tinggi dalam setiap aspek layanan, serta memberikan peluang global yang legal dan terjamin.',
                 'en' => 'We are proud to partner with world-class cruise companies that trust us to source and place the finest Indonesian talent.',
             ],
             'partner_logos' => [
-                ['logo_image' => $this->examplePath('example-desktop.png')],
-                ['logo_image' => $this->examplePath('example-desktop.png')],
-                ['logo_image' => $this->examplePath('example-desktop.png')],
-                ['logo_image' => $this->examplePath('example-desktop.png')],
+                ['logo_image' => $this->parentPath('/partners/AYC_Logo.webp')],
+                ['logo_image' => $this->parentPath('/partners/Explora_Journey_Logo.webp')],
+                ['logo_image' => $this->parentPath('/partners/MSC_Logo.webp')],
+                ['logo_image' => $this->parentPath('/partners/Opus_Logo.webp')],
             ],
         ]);
     }
@@ -102,7 +102,7 @@ class SectionAndContentSeeder extends Seeder
         TestimonialSetting::create([
             'testimonial_heading'     => ['id' => 'Apa Kata Mereka', 'en' => 'What They Say'],
             'testimonial_description' => [
-                'id' => 'Dengarkan langsung pengalaman nyata dari para profesional Indonesia yang telah memulai karir internasional mereka melalui PT Las Olas Indonesia.',
+                'id' => 'Ratusan pengalaman sukses yang mencerminkan kualitas dan dampak positif layanan kami.',
                 'en' => 'Hear directly from Indonesian professionals who have launched their international careers through PT Las Olas Indonesia.',
             ],
             'testimonial_button_text' => ['id' => 'Lihat Lainnya', 'en' => 'View More'],
@@ -120,15 +120,15 @@ class SectionAndContentSeeder extends Seeder
 
         $list = [
             [
-                'name' => 'Kadek Devita Apriliani', 'image' => $this->examplePath('example-desktop.png'),
+                'name' => 'Kadek Devita Apriliani', 'image' => null,
                 'position'    => ['id' => 'Terapis Pijat',    'en' => 'Massage Therapist'],
                 'testimonial' => [
-                    'id' => 'Bergabung dengan PT Las Olas Indonesia adalah keputusan terbaik dalam hidup saya. Tim mereka sangat profesional dan supportif dari proses seleksi hingga keberangkatan. Kini saya bekerja di kapal pesiar MSC dengan penghasilan yang jauh melampaui ekspektasi saya.',
+                    'id' => 'Saya berterima kasih kepada Lasolas karena telah membimbing saya melewati proses lamaran kerja di luar negeri dengan lancar.   ',
                     'en' => 'Joining PT Las Olas Indonesia was the best decision of my life. Their team is incredibly professional and supportive throughout the entire selection and departure process. I now work aboard an MSC cruise ship with earnings that far exceed my expectations.',
                 ],
             ],
             [
-                'name' => 'Siti Rahmawati', 'image' => $this->examplePath('example-desktop.png'),
+                'name' => 'Siti Rahmawati', 'image' => null,
                 'position'    => ['id' => 'Tata Graha', 'en' => 'Housekeeping'],
                 'testimonial' => [
                     'id' => 'Saya tidak menyangka bisa bekerja di kapal pesiar internasional. Las Olas membantu saya dari pelatihan bahasa Inggris, pengurusan visa, hingga orientasi pra-keberangkatan. Pengalaman bekerja di Explora Journeys membuka wawasan dan karir saya secara luar biasa.',
@@ -136,7 +136,7 @@ class SectionAndContentSeeder extends Seeder
                 ],
             ],
             [
-                'name' => 'Andi Pratama', 'image' => $this->examplePath('example-desktop.png'),
+                'name' => 'Andi Pratama', 'image' => null,
                 'position'    => ['id' => 'Utilitas Dapur', 'en' => 'Galley Utility'],
                 'testimonial' => [
                     'id' => 'Prosesnya transparan dan jelas dari awal. Las Olas tidak pernah meminta biaya tersembunyi dan selalu memberikan informasi yang akurat. Sekarang saya sudah kontrak kedua dan berencana naik jabatan. Terima kasih Las Olas!',
@@ -166,7 +166,7 @@ class SectionAndContentSeeder extends Seeder
         ];
 
         foreach ($members as $data) {
-            BoardMember::create(array_merge($data, ['image' => $this->examplePath('example-desktop.png'), 'linkedin' => null, 'email' => null]));
+            BoardMember::create(array_merge($data, ['image' => null, 'linkedin' => null, 'email' => null]));
         }
     }
 
@@ -191,7 +191,7 @@ class SectionAndContentSeeder extends Seeder
         ];
 
         foreach ($members as $data) {
-            ProfessionalTeamMember::create(array_merge($data, ['image' => $this->examplePath('example-desktop.png'), 'linkedin' => null, 'email' => null]));
+            ProfessionalTeamMember::create(array_merge($data, ['image' => null, 'linkedin' => null, 'email' => null]));
         }
     }
 }

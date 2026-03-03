@@ -37,11 +37,12 @@ class CompanyIdentityController extends Controller
         $responseData = [
             'lang' => $lang,
             'data' => [
-                'company_name' => $identity->company_name,
-                'tagline'      => $identity->tagline,
-                'contacts'     => $identity->getTranslation('contact_items', $lang) ?? [],
-                'locations'    => $identity->getTranslation('location_items', $lang) ?? [],
-                'socials'      => $identity->social_items ?? [],
+                'company_name'           => $identity->company_name,
+                'tagline'                => $identity->tagline,
+                'floating_whatsapp_link' => $identity->floating_whatsapp_link,
+                'contacts'               => $identity->getTranslation('contact_items', $lang) ?? [],
+                'locations'              => $identity->getTranslation('location_items', $lang) ?? [],
+                'socials'                => $identity->social_items ?? [],
             ],
         ];
 

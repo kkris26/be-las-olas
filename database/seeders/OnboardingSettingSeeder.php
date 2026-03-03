@@ -7,16 +7,21 @@ use Illuminate\Database\Seeder;
 
 class OnboardingSettingSeeder extends Seeder
 {
+    private function parentPath(string $filename): string
+    {
+        return 'onboarding/' . $filename;
+    }
+
     public function run(): void
     {
         OnboardingSetting::truncate();
 
         OnboardingSetting::create([
-            'banner_image' => null,
+            'banner_image' => $this->parentPath('banner/onboarding.webp'),
 
             'banner_title' => [
-                'en' => 'Onboarding Stories',
-                'id' => 'Cerita Onboarding',
+                'en' => 'Onboarding',
+                'id' => 'Onboarding',
             ],
 
             'subheading' => [
@@ -26,11 +31,11 @@ class OnboardingSettingSeeder extends Seeder
 
             'heading' => [
                 'en' => 'Onboarding Stories',
-                'id' => 'Cerita Onboarding',
+                'id' => 'Onboarding Stories',
             ],
 
             'short_description' => [
-                'en' => 'We are experienced in recruiting and placing the best workforce to join cruise ship companies and overseas job placements.',
+                'en' => 'We are experienced in recruiting and placing the best workforce to join cruise ship companies as well as overseas job placements.',
                 'id' => 'Kami berpengalaman dalam merekrut dan menempatkan tenaga kerja terbaik untuk bergabung dengan perusahaan kapal pesiar serta penempatan kerja keluar negeri.',
             ],
 
@@ -47,7 +52,7 @@ class OnboardingSettingSeeder extends Seeder
                 'en' => 'onboarding, cruise career, overseas jobs, hospitality, Las Olas Indonesia',
                 'id' => 'onboarding, karier kapal pesiar, kerja luar negeri, perhotelan, Las Olas Indonesia',
             ],
-            'seo_og_image' => null,
+            'seo_og_image' => $this->parentPath('seo/main-logo-loi.webp'),
         ]);
     }
 }

@@ -82,11 +82,11 @@ class HomePageResource extends Resource
                                 Forms\Components\TextInput::make('hero_button_link')
                                     ->label('Button Link')
                                     ->required()
-                                    ->helperText('e.g. #register or /onboarding')
+                                    ->helperText('e.g. https://tms.lasolas.id/jobs')
                                     ->maxLength(255),
                             ]),
                             Forms\Components\Section::make('Background Images')
-                                ->description('Desktop background is required. Mobile background can be customized with a toggle.')
+                         ->description('Desktop background is required. Mobile background can be enabled via toggle.')
                                 ->columns(2)
                                 ->schema([
                                     static::imageUpload('hero_desktop_bg_image', 'Desktop Background', 'home/hero')
@@ -124,16 +124,13 @@ class HomePageResource extends Resource
                                 ->required()
                                 ->rows(5)
                                 ->columnSpanFull(),
-                            Forms\Components\Grid::make(2)->schema([
+
                                 Forms\Components\TextInput::make('highlight_button_text')
                                     ->label('Button Text')
                                     ->required()
-                                    ->maxLength(100),
-                                Forms\Components\TextInput::make('highlight_button_link')
-                                    ->label('Button Link')
-                                    ->required()
-                                    ->maxLength(255),
-                            ]),
+                                    ->maxLength(100)
+                                          ->columnSpanFull(),
+
                             static::imageUpload('highlight_image', 'Highlight Image', 'home/highlight')
                                 ->columnSpanFull()
                                 ->required(),
@@ -188,34 +185,6 @@ class HomePageResource extends Resource
                                 ->required()
                                 ->rows(3)
                                 ->columnSpanFull(),
-                            Forms\Components\Repeater::make('cruise_services')
-                                ->label('Cruise Service Cards')
-                                ->addActionLabel('Add Cruise Service Card')
-                                ->collapsible()
-                                ->cloneable()
-                                ->defaultItems(0)
-                                ->columnSpanFull()
-                                ->schema([
-                                    /* static::imageUpload('image', 'Card Image', 'home/services/cruise')
-                                        ->columnSpanFull(), */
-                                    Forms\Components\TextInput::make('heading')
-                                        ->label('Heading')
-                                        ->required()
-                                        ->columnSpanFull(),
-                                    Forms\Components\Textarea::make('description')
-                                        ->label('Description')
-                                        ->required()
-                                        ->rows(3)
-                                        ->columnSpanFull(),
-                                    Forms\Components\Grid::make(2)->schema([
-                                        Forms\Components\TextInput::make('button_text')
-                                            ->label('Button Text')
-                                            ->required(),
-                                        Forms\Components\TextInput::make('button_link')
-                                            ->label('Button Link')
-                                            ->required(),
-                                    ]),
-                                ]),
                         ]),
 
                     // ── Tab 5: Land Services ─────────────────────────────────
@@ -235,34 +204,6 @@ class HomePageResource extends Resource
                                 ->required()
                                 ->rows(3)
                                 ->columnSpanFull(),
-                            Forms\Components\Repeater::make('land_services')
-                                ->label('Land Service Cards')
-                                ->addActionLabel('Add Land Service Card')
-                                ->collapsible()
-                                ->cloneable()
-                                ->defaultItems(0)
-                                ->columnSpanFull()
-                                ->schema([
-                                    /* static::imageUpload('image', 'Card Image', 'home/services/land')
-                                        ->columnSpanFull(), */
-                                    Forms\Components\TextInput::make('heading')
-                                        ->label('Heading')
-                                        ->required()
-                                        ->columnSpanFull(),
-                                    Forms\Components\Textarea::make('description')
-                                        ->label('Description')
-                                        ->required()
-                                        ->rows(3)
-                                        ->columnSpanFull(),
-                                    Forms\Components\Grid::make(2)->schema([
-                                        Forms\Components\TextInput::make('button_text')
-                                            ->label('Button Text')
-                                            ->required(),
-                                        Forms\Components\TextInput::make('button_link')
-                                            ->label('Button Link')
-                                            ->required(),
-                                    ]),
-                                ]),
                         ]),
 
                     // ── Tab 6: News Section ──────────────────────────────────
@@ -318,9 +259,9 @@ class HomePageResource extends Resource
                                 ->helperText('Comma-separated, e.g. cruise jobs, hospitality, Indonesia')
                                 ->maxLength(500)
                                 ->columnSpanFull(),
-                            /* static::imageUpload('seo_og_image', 'OG Image (Open Graph)', 'home/seo')
+                            static::imageUpload('seo_og_image', 'OG Image (Open Graph)', 'home/seo')
                                 ->helperText('Recommended size: 1200×630 px. Converted to .webp on upload.')
-                                ->columnSpanFull(), */
+                                ->columnSpanFull(),
                         ]),
 
                 ]),
