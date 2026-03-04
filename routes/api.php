@@ -47,4 +47,7 @@ Route::middleware('throttle:api')->group(function () {
     // ── Service Lists ─────────────────────────────────────────────────────────────
     Route::get('/cruise-services', [App\Http\Controllers\Api\CruiseServiceController::class, 'index']);
     Route::get('/land-services',   [App\Http\Controllers\Api\LandServiceController::class,   'index']);
+
+    // ── Contact Form ──────────────────────────────────────────────────────────────
+    Route::post('/contact-form', [App\Http\Controllers\Api\ContactController::class, 'send']);
 });
