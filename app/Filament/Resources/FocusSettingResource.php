@@ -82,12 +82,12 @@ class FocusSettingResource extends Resource
                                         ->label('Icon Key')
                                         ->required()
                                         ->options([
-                                            'personSearch' => 'personSearch – Recruitment',
-                                            'assignment'   => 'assignment – Selection',
-                                            'document'     => 'document – Documents',
-                                            'business'     => 'business – Placement',
-                                            'analytics'    => 'analytics – Development',
-                                            'partnership'  => 'partnership – Networking',
+                                            'personSearch' => 'personSearch',
+                                            'assignment'   => 'assignment',
+                                            'document'     => 'document',
+                                            'business'     => 'business',
+                                            'analytics'    => 'analytics',
+                                            'partnership'  => 'partnership',
                                         ]),
                                     Forms\Components\TextInput::make('title')
                                         ->label('Title')
