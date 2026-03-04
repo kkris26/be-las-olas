@@ -14,6 +14,19 @@ class OnboardingController extends Controller
     private const MODULE = 'onboarding';
 
     /**
+     * Helper Sakti: Ambil konten sesuai request, kalau kosong ambil bahasa sebelah.
+     */
+    private function getFallbackContent(OnboardingPost $post, string $field, string $requestedLang)
+    {
+        $content = $post->getTranslation($field, $requestedLang, false);
+        if (empty($content)) {
+            $fallbackLang = ($requestedLang === 'id') ? 'en' : 'id';
+            return $post->getTranslation($field, $fallbackLang, false);
+        }
+        return $content;
+    }
+
+    /**
      * GET /api/onboarding?lang=en|id&page=1&per_page=6
      *
      * Returns paginated list of published onboarding posts (cached 300s).
@@ -54,13 +67,13 @@ class OnboardingController extends Controller
                 'last_page'    => $posts->lastPage(),
             ],
             'data' => $posts->map(fn ($post) => [
-                'id'                  => $post->id,
-                'title'               => $post->title,
-                'slug'                => $post->slug,
-                'published_at'        => $post->published_at,
-                'featured_image'      => $url($post->use_mobile_image ? $post->featured_image_mobile : $post->featured_image_desktop),
-                'description'         => $post->meta_description,
-                'reading_time'        => $post->reading_time,
+                'id'             => $post->id,
+                'title'          => $this->getFallbackContent($post, 'title', $lang),
+                'slug'           => $this->getFallbackContent($post, 'slug', $lang),
+                'published_at'   => $post->published_at,
+                'featured_image' => $url($post->use_mobile_image ? $post->featured_image_mobile : $post->featured_image_desktop),
+                'description'    => $this->getFallbackContent($post, 'meta_description', $lang),
+                'reading_time'   => $post->reading_time,
             ])->all(),
         ];
 
@@ -110,16 +123,16 @@ class OnboardingController extends Controller
             'lang' => $lang,
             'data' => [
                 'id'                      => $post->id,
-                'title'                   => $post->title,
-                'slug'                    => $post->getTranslation('slug', $lang),
+                'title'                   => $this->getFallbackContent($post, 'title', $lang),
+                'slug'                    => $this->getFallbackContent($post, 'slug', $lang),
                 'published_at'            => $post->published_at,
                 'featured_image_desktop'  => $url($post->featured_image_desktop),
                 'featured_image_mobile'   => $url($post->featured_image_mobile),
                 'use_mobile_image'        => $post->use_mobile_image,
-                'content'                 => $post->content,
-                'meta_title'              => $post->meta_title,
-                'meta_description'        => $post->meta_description,
-                'seo_keywords'            => $post->seo_keywords,
+                'content'                 => $this->getFallbackContent($post, 'content', $lang),
+                'meta_title'              => $this->getFallbackContent($post, 'meta_title', $lang),
+                'meta_description'        => $this->getFallbackContent($post, 'meta_description', $lang),
+                'seo_keywords'            => $this->getFallbackContent($post, 'seo_keywords', $lang),
                 'reading_time'            => $post->reading_time,
             ],
         ];

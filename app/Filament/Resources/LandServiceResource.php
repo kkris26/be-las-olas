@@ -22,7 +22,7 @@ class LandServiceResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
     protected static ?string $navigationLabel = 'Land Services';
     protected static ?string $navigationGroup = 'Content Management';
-    protected static ?int    $navigationSort  = 8;
+    protected static ?int    $navigationSort  = 7;
 
     private static function imageUpload(string $field, string $label, string $dir): Forms\Components\FileUpload
     {

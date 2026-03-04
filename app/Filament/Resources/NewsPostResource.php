@@ -65,7 +65,7 @@ class NewsPostResource extends Resource
                                 ->required()
                                 ->maxLength(255)
                                 ->columnSpanFull()
-                                ->helperText('Klik "Generate Slug" di atas untuk membuat slug dari Title otomatis, atau ketik secara manual.')
+                                ->helperText('Click "Generate Slug" above to automatically create a slug from the Title, or type manually.')
                                 ->hintAction(
                                     Forms\Components\Actions\Action::make('generateSlug')
                                         ->label('Generate Slug')
@@ -77,7 +77,7 @@ class NewsPostResource extends Resource
                                             }
                                         })
                                 ),
-                            Forms\Components\DatePicker::make('published_at')
+                            Forms\Components\DateTimePicker::make('published_at')
                                 ->label('Published At')
                                 ->default(now())
                                 ->columnSpanFull(),

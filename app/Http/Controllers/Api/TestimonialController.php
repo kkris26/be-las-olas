@@ -13,6 +13,19 @@ class TestimonialController extends Controller
 {
     private const MODULE = 'testimonials';
 
+    /**
+     * Helper Sakti: Ambil konten sesuai request, kalau kosong ambil bahasa sebelah.
+     */
+    private function getFallbackContent(Testimonial $post, string $field, string $requestedLang)
+    {
+        $content = $post->getTranslation($field, $requestedLang, false);
+        if (empty($content)) {
+            $fallbackLang = ($requestedLang === 'id') ? 'en' : 'id';
+            return $post->getTranslation($field, $fallbackLang, false);
+        }
+        return $content;
+    }
+
     public function index(Request $request): JsonResponse
     {
         $lang = in_array($request->query('lang'), ['id', 'en']) ? $request->query('lang') : 'en';
@@ -30,8 +43,8 @@ class TestimonialController extends Controller
         $testimonials = Testimonial::orderBy('id')->get()->map(fn ($t) => [
             'id'          => $t->id,
             'name'        => $t->name,
-            'position'    => $t->position,
-            'testimonial' => $t->testimonial,
+            'position'    => $this->getFallbackContent($t, 'position', $lang),
+            'testimonial' => $this->getFallbackContent($t, 'testimonial', $lang),
             'image'       => $url($t->image),
         ])->all();
 

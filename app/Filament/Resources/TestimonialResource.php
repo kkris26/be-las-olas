@@ -21,7 +21,7 @@ class TestimonialResource extends Resource
     protected static ?string $navigationIcon  = 'heroicon-o-chat-bubble-left-ellipsis';
     protected static ?string $navigationLabel = 'Testimonials';
     protected static ?string $navigationGroup = 'Content Management';
-    protected static ?int    $navigationSort  = 1;
+    protected static ?int    $navigationSort  = 5;
 
     // ─── Reusable image factory ───────────────────────────────────────────────
 
@@ -68,6 +68,12 @@ class TestimonialResource extends Resource
                 ->rows(5)
                 ->columnSpanFull(),
 
+            Forms\Components\TextInput::make('sort_order')
+                ->label('Sort Order')
+                ->numeric()
+                ->default(0)
+                ->helperText('Lower number = shown first.'),
+
         ])->columns(2);
     }
 
@@ -76,6 +82,7 @@ class TestimonialResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('sort_order', 'asc')
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Photo')
@@ -96,6 +103,10 @@ class TestimonialResource extends Resource
                 Tables\Columns\TextColumn::make('testimonial')
                     ->label('Preview')
                     ->limit(80),
+
+                Tables\Columns\TextColumn::make('sort_order')
+                    ->label('#')
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Updated')

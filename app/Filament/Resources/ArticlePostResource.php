@@ -21,7 +21,7 @@ class ArticlePostResource extends Resource
     protected static ?string $navigationIcon  = 'heroicon-o-document';
     protected static ?string $navigationLabel = 'Article Posts';
     protected static ?string $navigationGroup = 'Content Management';
-    protected static ?int    $navigationSort  = 3;
+    protected static ?int    $navigationSort  = 2;
 
     private static function imageUpload(string $field, string $label, string $dir): Forms\Components\FileUpload
     {
@@ -60,7 +60,7 @@ class ArticlePostResource extends Resource
                                 ->required()
                                 ->maxLength(255)
                                 ->columnSpanFull()
-                                ->helperText('Klik "Generate Slug" di atas untuk membuat slug dari Title otomatis, atau ketik secara manual.')
+                                ->helperText('Click "Generate Slug" above to automatically create a slug from the Title, or type manually.')
                                 ->hintAction(
                                     Forms\Components\Actions\Action::make('generateSlug')
                                         ->label('Generate Slug')
@@ -72,7 +72,7 @@ class ArticlePostResource extends Resource
                                             }
                                         })
                                 ),
-                            Forms\Components\DatePicker::make('published_at')
+                            Forms\Components\DateTimePicker::make('published_at')
                                 ->label('Published At')
                                 ->default(now())
                                 ->columnSpanFull(),

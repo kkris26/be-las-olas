@@ -22,7 +22,7 @@ class CruiseServiceResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
     protected static ?string $navigationLabel = 'Cruise Services';
     protected static ?string $navigationGroup = 'Content Management';
-    protected static ?int    $navigationSort  = 7;
+    protected static ?int    $navigationSort  = 6;
 
     private static function imageUpload(string $field, string $label, string $dir): Forms\Components\FileUpload
     {

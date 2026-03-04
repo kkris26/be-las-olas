@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->json('position')->nullable();       // Translatable
             $table->json('testimonial')->nullable();    // Translatable
+            $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
     }
