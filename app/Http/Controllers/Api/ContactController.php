@@ -21,7 +21,6 @@ class ContactController extends Controller
             'email'         => 'required|email|max:255',
             'subject'       => 'nullable|string|max:255',
             'message'       => 'required|string',
-            'phone'         => 'nullable|string|max:50',
             'captcha_token' => 'required|string',
         ]);
 
