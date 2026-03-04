@@ -7,8 +7,8 @@
         <style>
             body {
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                margin: 0;
-                padding: 0;
+                margin: 0px;
+                padding: 0px;
                 -webkit-font-smoothing: antialiased;
             }
             .wrapper {
