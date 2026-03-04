@@ -77,7 +77,7 @@ class SectionAndContentSeeder extends Seeder
             'partner_heading'     => ['id' => 'Mitra Kami', 'en' => 'Our Partners'],
             'partner_description' => [
                 'id' => 'Kami menjalin kerjasama dengan mitra internasional terpercaya, memastikan standar tinggi dalam setiap aspek layanan, serta memberikan peluang global yang legal dan terjamin.',
-                'en' => 'We are proud to partner with world-class cruise companies that trust us to source and place the finest Indonesian talent.',
+                'en' => 'We establish partnerships with trusted international partners, ensuring high standards in every aspect of our services while providing secure and fully compliant global opportunities.',
             ],
             'partner_logos' => [
                 ['logo_image' => $this->parentPath('/partners/AYC_Logo.webp')],
@@ -101,7 +101,7 @@ class SectionAndContentSeeder extends Seeder
             'testimonial_heading'     => ['id' => 'Apa Kata Mereka', 'en' => 'What They Say'],
             'testimonial_description' => [
                 'id' => 'Ratusan pengalaman sukses yang mencerminkan kualitas dan dampak positif layanan kami.',
-                'en' => 'Hear directly from Indonesian professionals who have launched their international careers through PT Las Olas Indonesia.',
+                'en' => 'Hundreds of successful experiences that reflect the quality and positive impact of our services.',
             ],
             'testimonial_button_text' => ['id' => 'Lihat Lainnya', 'en' => 'View More'],
         ]);

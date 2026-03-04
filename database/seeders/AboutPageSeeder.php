@@ -29,8 +29,8 @@ class AboutPageSeeder extends Seeder
 
             // ── Owner Message ─────────────────────────────────────────────
             'owner_headline' => [
-                'en' => 'A Message From Our Management',
-                'id' => 'Sebuah Pesan dari Manajemen Kami',
+                'en' => 'A Message from Our Director',
+                'id' => 'Pesan dari Direktur Kami',
             ],
             'owner_message' => [
                 'en' => '<p>At PT Las Olas Indonesia, we are driven by integrity, professionalism, and a deep commitment to empowering Indonesian talent to succeed on the global stage. We believe that people are our greatest asset, and through continuous learning, responsible recruitment, and international standards, we strive to create meaningful career opportunities abroad.</p><p>Our mission is not only to connect talent with world-class employers, but also to ensure every journey is guided by transparency, care, and respect. We welcome individuals who share our values, passion, and dedication to excellence to grow together with us as part of the Las Olas family. If you are ready to take your career beyond borders, your journey starts here.</p>',
@@ -53,7 +53,9 @@ class AboutPageSeeder extends Seeder
                 'id' => 'PT. Las Olas Indonesia',
             ],
             'about_description' => [
-                'en' => '<p>PT Las Olas Indonesia is an official, government-licensed Indonesian Migrant Worker Placement Agency (P3MI) and the exclusive accredited entity authorized to actively recruit on behalf of MSC Cruises and Explora Journeys — unarguably two of the world\'s most prestigious and luxurious ocean vessel lines. We proudly specialize in meticulously matching highly skilled and ambitious Indonesian hospitality professionals with spectacular international career opportunities extending across both modern cruise fleets and land-based luxury hotel sectors.</p><p>Backed by decades of collective experience alongside an impeccable, proven track record of consistently successful global placements, our dedicated team comprehensively guides aspiring candidates through every single critical stage of employment: starting deliberately from the initial intensive screening phase and vocational skills competency training, all the way flawlessly through complex visa document processing and seamless final onboarding port support.</p>',
+                'en' => '<p>We are an Indonesian Migrant Worker Placement Agency (P3MI) specializing in the deployment of Indonesian Migrant Workers (PMI) to the global cruise line and land-based hospitality industries. Licensed by the Ministry of Manpower and the Ministry of Marine Affairs of the Republic of Indonesia, we ensure that every recruitment process is conducted in accordance with Quality Management System (QMS) ISO 9001:2015 standards and full compliance with MLC 2006 regulations.</p>
+                <p>We are committed to carrying out recruitment processes based on transparency and accountability, ensuring that every PMI placed receives employment opportunities aligned with their expertise at reasonable and fair deployment costs. Supported by a management team with extensive managerial experience in the cruise and hospitality industries, we understand the specific requirements of our principals and are fully prepared to provide competent and industry-ready professionals.</p>
+                <p>Through a selective recruitment system and a strong focus on service quality, we are dedicated to supporting Indonesian migrant workers in achieving global career success while contributing to the growth and success of our principals’ businesses.</p>',
                 'id' => '
                 <p>Adalah Perusahaan Penempatan Pekerja Migran Indonesia (P3MI) yang berfokus pada penempatan Pekerja Migran Indonesia (PMI) di industri kapal pesiar dan hospitality (darat) di seluruh dunia. Dengan lisensi dari Kementerian Ketenagakerjaan dan Kementerian Kelautan Republik Indonesia, kami memastikan bahwa setiap proses perekrutan berjalan sesuai dengan standar yang mengacu pada Sistem Manajemen Mutu (SMM) ISO 9001:2015 serta kepatuhan penuh terhadap regulasi MLC 2006.</p>
                 <p>Kami berkomitmen untuk menjalankan proses rekrutmen dengan asas transparansi dan akuntabilitas, sehingga setiap PMI yang ditempatkan dapat memperoleh kesempatan kerja yang sesuai dengan keahlian mereka dengan biaya keberangkatan yang wajar. Didukung oleh tim manajemen dengan pengalaman manajerial bertahun-tahun di industri kapal pesiar dan hospitality, kami memahami kebutuhan spesifik para prinsipal dan siap menyediakan PMI yang memiliki kompetensi sesuai dengan kebutuhan industri.</p>
@@ -77,16 +79,20 @@ class AboutPageSeeder extends Seeder
             'value_items' => [
                 'en' => [
                     [
-                        'title'   => 'Grand Vision',
-                        'content' => '<p>To be universally recognized as the undisputed leading Indonesian migrant professional worker placement agency matrix, perfectly bridging the challenging gap existing between immensely talented domestic workers and rewarding lucrative career opportunities flourishing in the global hospitality and worldwide marine tourism industry.</p>',
+                        'title'   => 'Vision',
+                        'content' => '<p>To become a leading Indonesian migrant worker placement agency, bridging the gap between skilled professionals and global career opportunities in the tourism industry.</p>',
                     ],
                     [
-                        'title'   => 'Focused Mission',
-                        'content' => '<ol><li>Consistently conduct ethical, highly professional, strictly transparent, and absolutely scam-free candidate recruitment screening frameworks.</li><li>To nurture and actively foster genuinely mutually beneficial, long-lasting strategic business partnerships.</li><li>Successfully manage our corporate institutional assets through transparent, high-accountability good governance practices.</li></ol>',
+                        'title'   => 'Mission',
+                        'content' => '<ol>
+                        <li>To conduct recruitment and workforce placement processes with the highest level of professionalism and transparency.</li>
+                        <li>To establish mutually beneficial partnerships between workers, industry partners, and other stakeholders.</li>
+                        <li>To manage the organization with strong governance and innovative service excellence.</li>
+                        </ol>',
                     ],
                     [
-                        'title'   => 'Unwavering Commitment',
-                        'content' => '<p>Relentlessly dedicated to upholding unquestionable integrity, providing highly personalized individual support services, and passionately promoting radically fair employment labor standards for all citizens everywhere in Indonesia.</p>',
+                        'title'   => 'Commitment',
+                        'content' => '<p>Dedicated to integrity, personalized service, and promoting fair employment practices in Indonesia.</p>',
                     ],
                 ],
                 'id' => [
@@ -96,7 +102,7 @@ class AboutPageSeeder extends Seeder
                     ],
                     [
                         'title'   => 'Misi',
-                        'content' => '<ul><li>Melakukan proses rekrutmen dan penempatan tenaga kerja dengan penuh profesionalisme dengan proses yang transparan.</li><li>Menyelenggarakan kerja sama yang saling menguntungkan antara pekerja, industri, dan pihak lainnya.</li><li>Mengelola kelembagaan dengan tata kelola yang baik dan pelayanan yang inovatif.</li></ul>',
+                        'content' => '<ol><li>Melakukan proses rekrutmen dan penempatan tenaga kerja dengan penuh profesionalisme dengan proses yang transparan.</li><li>Menyelenggarakan kerja sama yang saling menguntungkan antara pekerja, industri, dan pihak lainnya.</li><li>Mengelola kelembagaan dengan tata kelola yang baik dan pelayanan yang inovatif.</li></ol>',
                     ],
                     [
                         'title'   => 'Komitmen',
@@ -134,7 +140,7 @@ class AboutPageSeeder extends Seeder
                 ['logo_image' => $this->parentPath('certifications/tuv-rheinland-certified.webp')],
 
             ],
-            'certified_image' => $this->parentPath('certified/TÜV-Rheinland-Building.webp'),
+            'certified_image' => $this->parentPath('certified/tuv-rheinland-building.webp'),
 
             // ── Professional Team ─────────────────────────────────────────
             'team_heading' => [
