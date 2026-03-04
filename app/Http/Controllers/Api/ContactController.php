@@ -38,21 +38,22 @@ class ContactController extends Controller
 
         try {
             $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-                'secret' => env('RECAPTCHA_SECRET_KEY'),
+                'secret'   => $recaptchaSecret,
                 'response' => $recaptchaToken,
                 'remoteip' => $request->ip(),
             ]);
 
             $result = $response->json();
-            
-            // Tambahkan log ini untuk melihat jawaban asli dari Google di storage/logs/laravel.log
-            Log::info('ReCAPTCHA Response:', $result);
 
             if (!($result['success'] ?? false)) {
+                Log::warning('reCAPTCHA verification failed', [
+                    'ip'      => $request->ip(),
+                    'errors'  => $result['error-codes'] ?? []
+                ]);
+
                 return response()->json([
                     'success' => false,
                     'message' => 'reCAPTCHA verification failed. Please try again.',
-                    'errors'  => $result['error-codes'] ?? []
                 ], 422);
             }
         } catch (\Exception $e) {
